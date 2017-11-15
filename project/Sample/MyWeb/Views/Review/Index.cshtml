@@ -1,0 +1,46 @@
+﻿@using MyWeb.Models;
+@model List<RestaurantReview>
+@{
+    ViewBag.Title = "Reviews";
+    
+}
+
+<h2>Reviews 333</h2>
+
+@*<table>
+    <thead>
+    
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Rating</th>
+    </tr>
+
+    </thead>
+    
+    @foreach(var review in Model)
+    {
+        <tr>
+            <td> @review.Id</td>
+            <td> @review.Name</td>
+            <td> @review.City</td>
+            <td> @review.City</td>
+            <td> @review.Rating</td>
+        </tr>
+    }
+
+</table>*@
+<div> We are showing <span>@Model.Count</span> item(s).</div>
+
+@foreach (var item in Model)
+{
+   @Html.Partial("_ReviewItem",item)
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
