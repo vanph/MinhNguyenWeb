@@ -1,45 +1,52 @@
-﻿@model List<MyWeb.DataAccess.Review>
+﻿@model IEnumerable<MyWeb.DataAccess.Review>
+
 @{
-    ViewBag.Title = "Reviews";
-    
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Reviews 333</h2>
-
-@*<table>
-    <thead>
-    
-    <tr>
-        <th>id</th>
-        <th>Name</th>
-        <th>City</th>
-        <th>Country</th>
-        <th>Rating</th>
-    </tr>
-
-    </thead>
-    
-    @foreach(var review in Model)
-    {
-        <tr>
-            <td> @review.Id</td>
-            <td> @review.Name</td>
-            <td> @review.City</td>
-            <td> @review.City</td>
-            <td> @review.Rating</td>
-        </tr>
-    }
-
-</table>*@
-<div> We are showing <span>@Model.Count</span> item(s).</div>
-
-@foreach (var item in Model)
-{
-   @Html.Partial("_ReviewItem",item)
-}
-
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th></th>
+    </tr>
 
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

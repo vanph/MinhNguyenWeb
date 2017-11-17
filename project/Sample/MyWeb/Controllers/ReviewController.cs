@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
@@ -44,6 +45,23 @@ namespace MyWeb.Controllers
                 _dbContext.Reviews.Add(review);
                 _dbContext.SaveChanges();
 
+                return RedirectToAction("Index", new { id = review.ID });
+            }
+            return View(review);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var model = _dbContext.Reviews.Find(id);
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Edit(Review review)
+        {
+            if (ModelState.IsValid)
+            {
+                _dbContext.Entry(review).State = EntityState.Modified;
+                _dbContext.SaveChanges();
                 return RedirectToAction("Index", new { id = review.ID });
             }
             return View(review);
