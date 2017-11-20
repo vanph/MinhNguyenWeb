@@ -5,8 +5,7 @@ namespace OdeToFood.Controllers
 {
     public class ReviewsController : Controller
     {
-
-        OdeToFoodDb _db = new OdeToFoodDb();
+        readonly OdeToFoodDb _db = new OdeToFoodDb();
 
         public ActionResult Index([Bind(Prefix="id")] int restaurantId)
         {
