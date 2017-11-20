@@ -21,7 +21,9 @@ namespace OdeToFood.Controllers
         [HttpGet]
         public ActionResult Create(int restaurantId)
         {
-            return View();
+            var  review = new RestaurantReview {RestaurantId = restaurantId , Rating = 10};
+
+            return View(review);
         }
 
         [HttpPost]
