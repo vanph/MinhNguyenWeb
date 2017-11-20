@@ -11,16 +11,16 @@ namespace OdeToFood.Controllers
 {
     public class RestaurantController : Controller
     {
-        private readonly OdeToFoodDb _db;
+        private readonly OdeToFoodDb _dbContext;
 
         public RestaurantController()
         {
-            _db = new OdeToFoodDb();
+            _dbContext = new OdeToFoodDb();
         }
 
-        public RestaurantController(OdeToFoodDb db)
+        public RestaurantController(OdeToFoodDb dbContext)
         {
-            _db = db;
+            _dbContext = dbContext;
         }
 
         //
@@ -28,7 +28,7 @@ namespace OdeToFood.Controllers
 
         public ActionResult Index()
         {
-            return View(_db.Restaurants.ToList());
+            return View(_dbContext.Restaurants.ToList());
         }
 
           //
@@ -49,8 +49,8 @@ namespace OdeToFood.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Restaurants.Add(restaurant);
-                _db.SaveChanges();
+                _dbContext.Restaurants.Add(restaurant);
+                _dbContext.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -62,7 +62,7 @@ namespace OdeToFood.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Restaurant restaurant = _db.Restaurants.Single(r => r.Id == id);
+            Restaurant restaurant = _dbContext.Restaurants.Single(r => r.Id == id);
             if (restaurant == null)
             {
                 return HttpNotFound();
@@ -78,10 +78,19 @@ namespace OdeToFood.Controllers
         {
             if (ModelState.IsValid)
             {
-                //_db.Update(restaurant);
-                _db.SaveChanges();
+                var existingRestaurant = _dbContext.Restaurants.SingleOrDefault(x => x.Id == restaurant.Id);
+                if (existingRestaurant != null)
+                {
+                    existingRestaurant.Name = restaurant.Name;
+                    existingRestaurant.City = restaurant.City;
+                    existingRestaurant.Country = restaurant.Country;
+
+                    _dbContext.SaveChanges();
+                }
+
                 return RedirectToAction("Index");
             }
+
             return View(restaurant);
         }
 
@@ -90,7 +99,7 @@ namespace OdeToFood.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Restaurant restaurant = _db.Restaurants.Single(r => r.Id == id);
+            Restaurant restaurant = _dbContext.Restaurants.Single(r => r.Id == id);
             if (restaurant == null)
             {
                 return HttpNotFound();
@@ -104,15 +113,15 @@ namespace OdeToFood.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            var restaurant = _db.Restaurants.Single(r => r.Id == id);
-            _db.Restaurants.Remove(restaurant);
-            _db.SaveChanges();
+            var restaurant = _dbContext.Restaurants.Single(r => r.Id == id);
+            _dbContext.Restaurants.Remove(restaurant);
+            _dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            _db?.Dispose();
+            _dbContext?.Dispose();
             base.Dispose(disposing);
         }
     }

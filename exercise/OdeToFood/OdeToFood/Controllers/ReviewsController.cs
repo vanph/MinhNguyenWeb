@@ -14,6 +14,7 @@ namespace OdeToFood.Controllers
             {
                 return View(restaurant);
             }
+
             return HttpNotFound();
         }
 
@@ -32,8 +33,10 @@ namespace OdeToFood.Controllers
             {
                 _db.RestaurantReviews.Add(review);
                 _db.SaveChanges();
+
                 return RedirectToAction("Index", new { id = review.RestaurantId });
             }
+
             return View(review);
         }
 
