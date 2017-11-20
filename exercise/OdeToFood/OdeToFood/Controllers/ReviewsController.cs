@@ -48,8 +48,16 @@ namespace OdeToFood.Controllers
         {
             if (ModelState.IsValid)
             {
-               // _db.Entry(review).State = EntityState.Modified;
-                _db.SaveChanges();
+                
+                var reviewEntity = _db.RestaurantReviews.Find(review.Id);
+
+                if (reviewEntity != null)
+                {
+                    reviewEntity.Body = review.Body;
+                    reviewEntity.ReviewerName = review.ReviewerName;
+                    _db.SaveChanges();
+                }
+                
                 return RedirectToAction("Index", new { id = review.RestaurantId });
             }
             return View(review);
