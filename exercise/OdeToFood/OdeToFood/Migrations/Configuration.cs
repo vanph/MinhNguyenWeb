@@ -26,7 +26,7 @@ namespace OdeToFood.Migrations
                    Name = "Smaka",
                    City = "Gothenburg",
                    Country = "Sweden",
-                   Reviews =
+                   RestaurantReviews = 
                        new List<RestaurantReview> { 
                        new RestaurantReview { Rating = 9, Body="Great food!", ReviewerName="Scott" }
                    }

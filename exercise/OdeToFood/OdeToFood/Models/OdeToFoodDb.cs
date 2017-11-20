@@ -1,55 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-
 namespace OdeToFood.Models
 {
-    public interface IOdeToFoodDb : IDisposable
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
+    public partial class OdeToFoodDb : DbContext
     {
-        IQueryable<T> Query<T>() where T : class;
-        void Add<T>(T entity) where T : class;
-        void Update<T>(T entity) where T : class;
-        void Remove<T>(T entity) where T : class;
-        void SaveChanges();
-    }
-
-
-    public class OdeToFoodDb : DbContext, IOdeToFoodDb
-    {
-        public OdeToFoodDb() : base("name=DefaultConnection")
+        public OdeToFoodDb()
+            : base("name=OdeToFoodDb")
         {
-
         }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<Restaurant> Restaurants { get; set; }
-        public DbSet<RestaurantReview> Reviews { get; set; }
+        public virtual DbSet<Restaurant> Restaurants { get; set; }
+        public virtual DbSet<RestaurantReview> RestaurantReviews { get; set; }
+        public virtual DbSet<UserProfile> UserProfiles { get; set; }
 
-        IQueryable<T> IOdeToFoodDb.Query<T>()
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            return Set<T>();
-        }
-
-        void IOdeToFoodDb.Add<T>(T entity)
-        {
-            Set<T>().Add(entity);
-        }
-
-        void IOdeToFoodDb.Update<T>(T entity)
-        {
-            Entry(entity).State = System.Data.EntityState.Modified;
-        }
-
-        void IOdeToFoodDb.Remove<T>(T entity)
-        {
-            Set<T>().Remove(entity);
-        }
-
-        void IOdeToFoodDb.SaveChanges()
-        {
-            SaveChanges();
+            modelBuilder.Entity<Restaurant>()
+                .HasMany(e => e.RestaurantReviews)
+                .WithRequired(e => e.Restaurant)
+                .WillCascadeOnDelete(false);
         }
     }
 }

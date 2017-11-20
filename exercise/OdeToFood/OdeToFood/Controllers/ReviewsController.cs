@@ -1,9 +1,4 @@
 ﻿using OdeToFood.Models;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace OdeToFood.Controllers
@@ -34,7 +29,7 @@ namespace OdeToFood.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Reviews.Add(review);
+                _db.RestaurantReviews.Add(review);
                 _db.SaveChanges();
                 return RedirectToAction("Index", new { id = review.RestaurantId });
             }
@@ -44,7 +39,7 @@ namespace OdeToFood.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var model = _db.Reviews.Find(id);
+            var model = _db.RestaurantReviews.Find(id);
             return View(model);
         }
 
@@ -53,7 +48,7 @@ namespace OdeToFood.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Entry(review).State = EntityState.Modified;
+               // _db.Entry(review).State = EntityState.Modified;
                 _db.SaveChanges();
                 return RedirectToAction("Index", new { id = review.RestaurantId });
             }
@@ -62,7 +57,7 @@ namespace OdeToFood.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            _db.Dispose();
+            _db?.Dispose();
             base.Dispose(disposing);
         }
     }
