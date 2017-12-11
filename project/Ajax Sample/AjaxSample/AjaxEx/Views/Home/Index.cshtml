@@ -1,0 +1,84 @@
+﻿@model AjaxEx.Models.Person
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>My Ajax example</h2>
+
+<input type="text" id="txtName" />
+<input type="button" id="btnGet" value="Get Current Time" /> <br />
+
+
+
+<label> Focusout text to covert Number => VND </label>
+<input type="text" id="txtNumber" />
+<input type="text" id="txtCurrencyString" style="width:500px " />
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnGet").click(function () {
+            var param = { "name": $("#txtName").val() };
+
+            $.ajax({
+                url: "/Home/AjaxMethod",
+                type: "GET",
+                data: param,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    alert("Hello: " + response.Name + " .\nCurrent Date and Time: " + response.DateTimeString);
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+
+
+
+        function isNumeric(n) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+        }
+
+        $("#txtNumber").focusout(function () {
+
+            var currencyNumber = $("#txtNumber").val();
+
+            if (!isNumeric(currencyNumber)) {
+                alert("The input number is invalid.");
+                $("#txtCurrencyString").val("");
+            } else {
+                $.ajax({
+                    url: "/Home/ConvertNumberToVnCurrencyString",
+                    type: "GET",
+                    data: { "number": currencyNumber },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        $("#txtCurrencyString").val(response);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            }
+
+
+        });
+
+
+
+
+    });
+
+
+</script>

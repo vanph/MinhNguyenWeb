@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AjaxEx.Models.RestaurantListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    
+}
+
+<h2>Restaurants</h2>
+
+<form method="get" action="@Url.Action("Index")">
+    <input type="search" name="searchTerm" value="@ViewBag.term" />
+    <input type="submit" value="Search" />
+</form>
+
+
+<div id="restaurantList">
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <h4>@item.Name</h4>
+            <div>
+                @item.City, @item.Country
+            </div>
+            <div>
+                Reviews: @item.CountOfReviews
+            </div>
+            <hr />
+        </div>
+    }
+</div>
+<script>
+
+
+</script>

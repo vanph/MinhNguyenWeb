@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AjaxEx.Models.RestaurantListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Ajax Restaurants</h2>
+
+<form method="get" action="@Url.Action("Index")" data-ajax >
+    <input type="search" name="searchTerm" />
+    <input type="submit" value="Search" />
+</form>
+
+<div id="restaurantList">
+
+    @Html.Partial("_Restaurants", Model)
+</div>
+
+<script>
+    $(function() {
+        $("form[data-ajax]").submit(function () {
+
+            var $form = $(this);
+           
+
+            $.ajax({
+                url: $form.attr("action"),
+                type: $form.attr("method"),
+                data: $form.serialize(),
+                success: function (data) {
+                    var $target = $("#restaurantList");
+                    $target.html("");
+                    //var $newHtml = $(data);
+                    $target.append(data);
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+
+            return false;
+        });
+    })
+
+</script>
