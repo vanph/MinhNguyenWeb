@@ -8,7 +8,7 @@
 <h2>Restaurants</h2>
 
 <form method="get" action="@Url.Action("Index")">
-    <input type="search" name="searchTerm" value="@ViewBag.term" />
+    <input type="search" name="searchTerm" />
     <input type="submit" value="Search" />
 </form>
 
@@ -26,6 +26,7 @@
                 Reviews: @item.CountOfReviews
             </div>
             <hr />
+           
         </div>
     }
 </div>

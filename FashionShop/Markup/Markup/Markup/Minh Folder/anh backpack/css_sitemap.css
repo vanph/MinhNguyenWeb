@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+.row h1{
+	color:#06F;
+	font-size:24px;
+	}
+
+.row .text{
+	color:#039;
+	font-size:29px;
+	}
+	
+footer {
+		border-top: 1px solid #000;
+		margin-top: 20px;
+		background:#333333;
+		color:#FFF;
+		clear:both;
+	}
+	.Footer {
+		padding-top: 20px;
+	}
+	.b-content li {
+		text-decoration: none;
+		list-style: none;
+		text-align:left;
+		
+	}
+	.b-title  {
+		
+		text-transform:uppercase;
+		font-weight: bold;
+		letter-spacing: 2px;
+		padding-bottom: 5px;
+	}
+	
+	.b-content ul li a {
+		
+		
+	}

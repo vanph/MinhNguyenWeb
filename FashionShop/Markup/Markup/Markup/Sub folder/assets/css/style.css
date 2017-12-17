@@ -1,0 +1,270 @@
+.border-right {
+  border-right: 1px solid gray; }
+
+#shopping-cart {
+  min-height: 500px;
+  padding-top: 100px; }
+  #shopping-cart .cart-title {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 100; }
+
+.product-thumbnail {
+  max-height: 100px; }
+
+.order-detail {
+  color: #3c3c3c; }
+  .order-detail thead {
+    text-transform: uppercase; }
+  .order-detail th {
+    font-weight: 500; }
+  .order-detail tbody p {
+    line-height: 100px;
+    vertical-align: middle; }
+  .order-detail tbody input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-top: 25px; }
+  .order-detail [color] {
+    width: 30px;
+    height: 30px; }
+  .order-detail [color="green"] {
+    margin: 35px auto;
+    display: block;
+    background-color: green; }
+  .order-detail [color="blue"] {
+    margin: 35px auto;
+    display: block;
+    background-color: blue; }
+  .order-detail [color="pink"] {
+    margin: 35px auto;
+    display: block;
+    background-color: pink; }
+
+#cart-summary-container {
+  padding: 50px 20px; }
+  #cart-summary-container button {
+    border-radius: 0;
+    border: 1px solid gray; }
+    #cart-summary-container button:focus {
+      outline: 0; }
+
+#cart-summary {
+  text-transform: uppercase; }
+
+.text-thin {
+  font-weight: 200; }
+
+.button-group div {
+  text-align: center; }
+
+.cart-button-continue {
+  background-color: whitesmoke;
+  color: black;
+  font-weight: 500; }
+  .cart-button-continue:hover, .cart-button-continue:focus {
+    background-color: white; }
+
+.cart-button-checkout {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  font-weight: 500; }
+  .cart-button-checkout:hover, .cart-button-checkout:focus {
+    background-color: whitesmoke;
+    color: black; }
+
+#carousel-gallery {
+  height: 100%;
+  width: 100%;
+  text-align: center; }
+  #carousel-gallery img {
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px; }
+  #carousel-gallery .carousel-control.left, #carousel-gallery .carousel-control.right {
+    background-image: none; }
+    #carousel-gallery .carousel-control.left span.glyphicon, #carousel-gallery .carousel-control.right span.glyphicon {
+      width: 100px;
+      height: 100px;
+      margin-top: -50px;
+      line-height: 100px;
+      vertical-align: middle;
+      border-radius: 50%;
+      font-size: 4em;
+      color: gray;
+      font-weight: 100; }
+      #carousel-gallery .carousel-control.left span.glyphicon:hover, #carousel-gallery .carousel-control.right span.glyphicon:hover {
+        background-color: gray;
+        color: white; }
+  #carousel-gallery .carousel-caption {
+    color: black;
+    font-size: 1.5em; }
+  #carousel-gallery .carousel-indicators li {
+    display: inline-block;
+    width: 20px;
+    height: 5px;
+    background-color: gray; }
+    #carousel-gallery .carousel-indicators li.active {
+      width: 30px;
+      height: 10px; }
+
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 200; }
+
+:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 200; }
+
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 200; }
+
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 200; }
+
+#form-container {
+  margin-top: 10%;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  max-height: 50%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8); }
+
+.left-panel {
+  color: white;
+  padding-top: 50px;
+  float: left; }
+  .left-panel .icon {
+    font-size: 4em; }
+  .left-panel .title {
+    font-size: 2em;
+    text-transform: uppercase; }
+  .left-panel ul {
+    margin-top: 30px;
+    padding-left: 18px;
+    list-style-type: circle;
+    text-align: left;
+    font-size: 1.2em; }
+    .left-panel ul li {
+      margin-bottom: 5px; }
+
+.right-panel {
+  background-color: white;
+  padding: 50px 20px; }
+
+#login-form .title, #register-form .title {
+  font-size: 3em; }
+#login-form input, #register-form input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid gray;
+  height: 50px;
+  font-size: 1.2em;
+  padding-bottom: 2px; }
+  #login-form input:focus, #register-form input:focus {
+    outline: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8); }
+#login-form #username, #login-form #password, #register-form #username, #register-form #password {
+  width: 100%; }
+#login-form #firstName, #login-form #lastName, #register-form #firstName, #register-form #lastName {
+  width: 49%; }
+#login-form #lastName, #register-form #lastName {
+  float: right; }
+#login-form .forgot-password, #register-form .forgot-password {
+  padding-top: 10px; }
+#login-form .button, #register-form .button {
+  margin-top: 20px; }
+#login-form button, #register-form button {
+  float: left;
+  border-radius: 30px !important;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: white;
+  color: black; }
+  #login-form button:focus, #register-form button:focus {
+    outline: 0 !important; }
+#login-form .social-login, #register-form .social-login {
+  line-height: 50px;
+  vertical-align: middle;
+  float: right; }
+  #login-form .social-login ul, #register-form .social-login ul {
+    line-height: 40px;
+    vertical-align: middle; }
+  #login-form .social-login li:first-child, #register-form .social-login li:first-child {
+    color: gray;
+    padding-right: 0; }
+  #login-form .social-login li:not(:first-child), #register-form .social-login li:not(:first-child) {
+    margin-left: 20px;
+    font-size: 1.5em;
+    color: white;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%; }
+    #login-form .social-login li:not(:first-child):hover, #register-form .social-login li:not(:first-child):hover {
+      cursor: pointer; }
+    #login-form .social-login li:not(:first-child) i, #register-form .social-login li:not(:first-child) i {
+      line-height: 40px;
+      vertical-align: middle; }
+  #login-form .social-login li:nth-child(2), #register-form .social-login li:nth-child(2) {
+    background-color: rgba(0, 0, 255, 0.8); }
+    #login-form .social-login li:nth-child(2):hover, #register-form .social-login li:nth-child(2):hover {
+      background-color: blue; }
+  #login-form .social-login li:nth-child(3), #register-form .social-login li:nth-child(3) {
+    background-color: rgba(255, 0, 0, 0.8); }
+    #login-form .social-login li:nth-child(3):hover, #register-form .social-login li:nth-child(3):hover {
+      background: red; }
+  #login-form .social-login li:nth-child(4), #register-form .social-login li:nth-child(4) {
+    background-color: rgba(0, 128, 0, 0.8); }
+    #login-form .social-login li:nth-child(4):hover, #register-form .social-login li:nth-child(4):hover {
+      background-color: green; }
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  border-radius: 0px;
+  background-color: white;
+  border: 0px; }
+
+/* styling for footer */
+footer {
+  border-top: 1px solid #000;
+  margin-top: 20px;
+  background: #333333;
+  color: #FFF; }
+
+.Footer {
+  padding-top: 30px; }
+
+.b-content li {
+  text-decoration: none;
+  list-style: none;
+  text-align: left; }
+
+.b-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-bottom: 5px; }
+
+.full-width {
+  width: 100%; }
+
+.full-height {
+  height: 100%; }
+
+.no-gutters {
+  margin: 0;
+  padding: 0; }
+
+.btn-lg {
+  padding: 12px 30px; }
+
+/*# sourceMappingURL=style.css.map */

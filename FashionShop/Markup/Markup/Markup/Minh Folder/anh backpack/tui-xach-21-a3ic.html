@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/theme/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="/theme/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" >
+<link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="vi">
+<title>Túi xách thời trang Lee&Tee</title>
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="keywords" content="Túi xách" />
+<meta name="description" content="Túi da thời trang LeeAndTee phong cách cổ điển, dễ phối đồ, phù hợp với mọi đối tượng, thương hiệu Việt Nam" />
+<link href="/theme/icon.ico" rel="shortcut icon" type="image/x-icon" />
+<base href="http://leeandtee.vn/" />
+
+<script language="javascript" src="/libraries/js/system.javascript.js"> </script>
+<script language="javascript" src="/libraries/js/jquery.js"> </script>
+<script language="javascript" src="/libraries/js/ajax.js"> </script>
+<script language="javascript" src="/libraries/js/jquery.lazyload.js"> </script>
+
+
+<link href="/theme/css/general.css" rel="stylesheet" type="text/css" />
+<link href="/theme/css/theme.css" rel="stylesheet" type="text/css" />
+<link href="/theme/css/system.css" rel="stylesheet" type="text/css" />
+<link href="/theme/modules/product/css/default.css" rel="stylesheet" type="text/css" />
+<link href="/theme/modules/product/css/category.css" rel="stylesheet" type="text/css" />
+<link href="/theme/modules/product/css/product.list.css" rel="stylesheet" type="text/css" />
+<link href="/blocks/breadcrumb/theme/style.css" rel="stylesheet" type="text/css" />
+<link href="/blocks/search/theme/style.css" rel="stylesheet" type="text/css" />
+<link href="/blocks/menu/theme/style.css" rel="stylesheet" type="text/css" />
+<link href="/blocks/reseller/theme/style.css" rel="stylesheet" type="text/css" />
+<link href="/blocks/mainmenu/theme/style.css" rel="stylesheet" type="text/css" />
+<link href="/blocks/banner/theme/style.css" rel="stylesheet" type="text/css" />
+<link href="/blocks/newsletter/theme/style.css" rel="stylesheet" type="text/css" />
+<link href="/blocks/product_cart/theme/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://leeandtee.vn/js/fancybox/jquery.fancybox.js"></script>
+<link rel="stylesheet" type="text/css" href="http://leeandtee.vn/js/fancybox/jquery.fancybox.css" media="screen" />
+
+<script src="http://leeandtee.vn/js/script.js"></script>
+<script src="http://leeandtee.vn/js/jquery.lazyload.js"></script>
+<script src="/theme/bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46104207-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+<div id="stl-primary">
+    <div id="stl-top" class="container">
+      <div class="row">
+        <div class="logo col-md-2"><a href="http://leeandtee.vn/" title="LEEANDTEE.VN"><p><img src="uploads/images/logo/A.1_logo_cautruc.png" /></p></a></div>
+        <div class="top col-md-6"><div class="blockhotline"><div class="b-content">Gọi ngay  08.9977.2020</div>
+</div>
+<div class="blocksearch"><div class="b-content"><script language="javascript" src="/libraries/js/ajax.js"> </script>
+<div class="top-search">
+    <form method="get" action="/product/search.html" name="frmSearch" id="frmSearch">
+    <div class="box">
+        <input type="text" value="Nhập tên túi xách, ví, balo... cần tìm?" class="inputbox" name="k" id="q" onfocus="if(this.value=='Nhập tên túi xách, ví, balo... cần tìm?') this.value = '';" onblur="if(this.value=='') this.value='Nhập tên túi xách, ví, balo... cần tìm?';" autocomplete="off" />
+        <div id="listboxsearch"></div>
+    </div>
+       <button class="button" type="submit"></button>
+    <input type="hidden" name="catid" value="" />
+    </form>
+ </div>   
+ <i>Tìm nhiều nhất: túi xách kales, túi bác hồ, balo du lịch, ...</i>
+<script language="javascript">
+	function submitFrmSearch(){	var f = document.frmSearch;	if(f.k.value != 'Nhập tên túi xách, ví, balo... cần tìm?') f.submit();}
+	
+	function getCatSearch(cat_name, cat_id){
+		var f = document.frmSearch;
+		getObj('catProductName').innerHTML = cat_name;
+		f.catid.value = cat_id;
+		getObj('dropCatList').style.display='none';
+	}
+	
+		
+	
+$(document).ready(function(){
+		$('li#showdropcatlist').hover(
+			function() { $('#dropCatList', this).css('display', 'block'); },
+			function() { $('#dropCatList', this).css('display', 'none'); });
+});
+
+var _m_timeout;
+
+$(document).ready(function(){
+	$('#q').keyup(function(){
+		var ajax = new SAjax();
+		ajax.setVar("m", 'product');
+		ajax.setVar("t", 'aj_kwsearch');
+		ajax.setVar("k", $('#q').val());
+		ajax.setVar("catid", document.frmSearch.catid.value);
+		
+		$('#listboxsearch').css('display','block');
+		ajax.method = 'POST';
+		ajax.element = 'listboxsearch';
+		ajax.runAJAX();
+		});
+		
+	$('#q').blur(function(){
+			_m_timeout = setTimeout("hideListboxs()", 200);
+		});
+		
+	$('#listboxsearch').scroll(function(){
+		clearTimeout(_m_timeout);
+		$('#listboxsearch').blur(function(){
+			_m_timeout = setTimeout("hideListboxs()", 200);
+		});
+	});
+	
+});
+
+function hideListboxs(){
+	$('#listboxsearch').css('display','none');
+}
+
+function getrk(obj){
+	submitFrmSch(obj.innerHTML);
+}
+function submitFrmSch(k, _link){
+	window.location.href=_link;
+
+}
+
+ </script>
+
+
+</div>
+</div>
+</div>        <div class="top-right col-md-4"><div class="blocksocial"><div class="b-content"><p><a target="_blank" href="https://www.facebook.com/leeandtee"><img src="uploads/images/social/facebook.png" alt="Facebook" /></a> <a target="_blank" href="https://plus.google.com/+LeeandteeVnn"><img src="uploads/images/social/googleplus.png" alt="Google+" /></a> <a target="_blank" href="https://twitter.com/leeandteevn"><img src="uploads/images/social/twitter.png" alt="Twitter" /></a> <a target="_blank" href="https://www.youtube.com/user/LeeandTeevn"><img src="uploads/images/social/youtube.png" alt="Youtube" /></a> <a target="_blank" href="https://www.pinterest.com/leeandteevnn"><img src="uploads/images/social/pin.png" alt="Pin" /></a> <a target="_blank" href="https://www.linkedin.com/in/leeandteevn/detail/recent-activity/"><img src="uploads/images/social/in.png" alt="In" /></a></p></div>
+</div>
+<div class="blockcart"><div class="b-content"><div class="bcart">
+        <a href="/user/loginform.html" class="a">Đăng nhập</a> 
+    <a href="/user/register.html" class="a">Đăng ký</a> 
+        <a href="/product/myaccount.html?t2=favorite" class="f">Yêu thích</a>
+    <a href="/product/cart.html" class="t">Giỏ hàng <span class="num">(0)</span><span id="minicart"></span></a>
+</div>
+<script language="javascript">
+$(function(){
+	$('.myaccount').hover(
+		function() { $('ul', this).css('display', 'block'); },
+		function() { $('ul', this).css('display', 'none');}
+	);
+});
+/*$(document).ready(function(){
+		$('.bcart a.t').hover(
+			function() { $('#minicart', this).css('display', 'block');showminicart(); },
+			function() { $('#minicart', this).css('display', 'none'); });
+});
+
+function showminicart(){
+		var ajax = new SAjax();
+		ajax.setVar("m", 'product');
+		ajax.setVar("t", 'aj_cart');
+		ajax.method = 'POST';
+		ajax.element = 'minicart';
+		ajax.runAJAX();
+		}*/
+ </script>
+
+
+
+
+
+</div>
+</div>
+</div>        <div class="main-menu"><nav class="b-main-menu navbar navbar-default">
+    <div class="navbar-header">
+      <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+       
+<ul class="nav navbar-nav">
+<li class=""><a href="http://leeandtee.vn/"><span>Trang chủ</span></a></li>
+<li class=" dropdown current"><a href="/san-pham.html"><span>Sản phẩm</span></a>
+<ul class="dropdown-menu lv1" role="menu">
+<li class=""><a href="/tui-xach-21-a3ic.html"><span>Túi xách</span></a><span class="banner banner0"><img src="/image/220/400/1/0/product/banners/TUI XACH.png" alt="Túi xách" /></span></li>
+<li class=""><a href="/balo-6-a3ic.html"><span>Balo</span></a><span class="banner banner1"><img src="/image/220/400/1/0/product/banners/balo.png" alt="Balo" /></span></li>
+<li class=""><a href="/tui-du-lich-17-a3ic.html"><span>Túi Du lịch</span></a><span class="banner banner2"><img src="/image/220/400/1/0/product/banners/TUI DU LICH.png" alt="Túi Du lịch" /></span></li>
+<li class=""><a href="/bop-vi-3-a3ic.html"><span>Bóp - Ví</span></a><span class="banner banner3"><a href="bop-vi-3-a3ic.html"><img src="/image/220/400/1/0/product/banners/bop vi.png" alt="Bóp - Ví" /></a></span></li>
+<li class=""><a href="/vali-32-a3ic.html"><span>Vali</span></a><span class="banner banner4"><a href="http://leeandtee.vn/vali-32-a3ic.html"><img src="/image/220/400/1/0/product/banners/hinh anh chinh cho ads.png" alt="Vali" /></a></span></li>
+<li class=""><a href="/day-nit-24-a3ic.html"><span>Dây nịt</span></a><span class="banner banner5"><img src="/image/220/400/1/0/product/banners/DAY NIT.png" alt="Dây nịt" /></span></li>
+<li class=" last"><a href="/phu-kien-khac-31-a3ic.html"><span>Phụ Kiện Khác</span></a><span class="banner banner6"><img src="/image/220/400/1/0/product/banners/BAO DA IPAD.png" alt="Phụ Kiện Khác" /></span></li>
+</ul>
+</li>
+<li class=""><a href="/lookbooks.html"><span>Lookbooks</span></a></li>
+<li class=""><a href="/blogs.html"><span>Blogs</span></a></li>
+<li class=""><a href="/khuyen-mai.html"><span>Khuyến mãi</span></a></li>
+<li class=" last"><a href="/tin-tuc.html"><span>Tin tức</span></a></li>
+</ul>
+    </div><!--/.nav-collapse -->
+</nav>
+    
+<script language="javascript">
+$(document).ready(function(){
+	$('.navbar ul.nav li').hover(
+		function(){$('> ul', this).show();},
+		function(){$('> ul', this).hide();}
+	);
+});
+</script>
+ 
+ 
+    
+
+<script language="javascript">
+$(document).ready(function(){
+	$('.navbar-nav .dropdown li .active').parents('li').children('a').addClass('active');
+	});
+</script>
+
+</div> 	  </div>
+    </div>
+        	<div class="block-3 container"><div class="block"><div class="b-content"><p><a href="http://valihenry.leeandtee.vn/" target="_blank"><img src="http://valihenry.leeandtee.vn/image/1170/600/1/0/banners/slider/valihenry-slider-15-8-2017.jpg" width="1170" height="600" /></a></p></div>
+</div>
+</div>    <div id="stl-body" class="container">
+              <div class="row">
+                <div id="stl-content" class="col-md-12">
+			            <div class="productcontent"><div class="p-default-layout browse_2">
+    <div class="col-sm-3 l-content">
+        <div class="filters">
+<div class="title">Lọc sản phẩm</div>
+<div class="m-content">
+    <div class="filter">
+        <div class="f-title">Dành cho</div>
+        <ul class="f-list">
+            <li><input type="checkbox" class="cbtp" name="cbtp[]" value="man" id="sexman" /> <span><label for="sexman">Nam</label></span></li>
+            <li><input type="checkbox" class="cbtp" name="cbtp[]" value="wom" id="sexwom" /> <span><label for="sexwom">Nữ</label></span></li>
+            <li><input type="checkbox" class="cbtp" name="cbtp[]" value="uni" id="sexuni" /> <span><label for="sexuni">Unisex</label></span></li>
+        </ul>
+    </div>
+            <div class="filter"><div class="f-title">Phong cách</div><ul class="f-list"><li><input type="checkbox" name="cbfl[]" class="cbfl" value="1" id="f_1" /> <span><label for="f_1">Lịch lãm</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="2" id="f_2" /> <span><label for="f_2">Cổ điển</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="3" id="f_3" /> <span><label for="f_3">Công sở</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="4" id="f_4" /> <span><label for="f_4">Cá tính</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="5" id="f_5" /> <span><label for="f_5">Thân thiện</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="6" id="f_6" /> <span><label for="f_6">Phượt</label></span></li></ul></div><div class="filter"><div class="f-title">Bạn Đang Cần Túi Xách?</div><ul class="f-list"><li><input type="checkbox" name="cbfl[]" class="cbfl" value="15" id="f_15" /> <span><label for="f_15">Đựng laptop</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="16" id="f_16" /> <span><label for="f_16">Đựng tài liệu A4</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="17" id="f_17" /> <span><label for="f_17">Du lịch ngắn ngày</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="18" id="f_18" /> <span><label for="f_18">Du lịch dài ngày</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="19" id="f_19" /> <span><label for="f_19">Tiệc tùng - Dạ hội</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="28" id="f_28" /> <span><label for="f_28">Túi xách bản to - đeo vai</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="29" id="f_29" /> <span><label for="f_29">Túi đeo chéo dạo phố</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="30" id="f_30" /> <span><label for="f_30">Túi đi biển - đi du lịch</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="31" id="f_31" /> <span><label for="f_31">Túi cầm tay</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="42" id="f_42" /> <span><label for="f_42">Túi đựng Tablet</label></span></li></ul></div><div class="filter"><div class="f-title">Mức giá</div><ul class="f-list"><li><input type="checkbox" name="cbfl[]" class="cbfl" value="7" id="f_7" /> <span><label for="f_7">< 300.000VNĐ</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="8" id="f_8" /> <span><label for="f_8">300.000 - 399.000VNĐ</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="9" id="f_9" /> <span><label for="f_9">400.000 - 499.000VNĐ</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="10" id="f_10" /> <span><label for="f_10">500.000 - 599.000VNĐ</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="11" id="f_11" /> <span><label for="f_11">> 600.000VNĐ</label></span></li></ul></div><div class="filter"><div class="f-title">Màu sắc</div><ul class="f-list"><li><input type="checkbox" name="cbfl[]" class="cbfl" value="12" id="f_12" /> <span><label for="f_12">Màu bò</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="13" id="f_13" /> <span><label for="f_13">Màu bò lợt</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="14" id="f_14" /> <span><label for="f_14">Màu nâu đậm</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="20" id="f_20" /> <span><label for="f_20">Màu Đen</label></span></li><li><input type="checkbox" name="cbfl[]" class="cbfl" value="21" id="f_21" /> <span><label for="f_21">Màu Đỏ</label></span></li></ul></div>    </div>
+</div>
+<script language="javascript">
+
+function rurl(url){
+	history.pushState({}, "", url);
+}
+$(document).ready(function(){
+	$('ul.f-list > li > input').click(function(){
+		loadProducts();
+	});
+	$('.cbpmt').click(function(){
+		loadProducts();
+	});
+	// reset checked
+	/*$('ul.f-list > li > input').click(function(){
+		if($(this).attr('checked'))
+			$(this).attr('checked', false);
+		else
+			$(this).attr('checked', true);
+	});
+	*/
+	/*
+	$('ul.f-list > li > span').click(function(){
+		var cb = $(this).parent('li').children('input'); //alert(cb);
+		if( cb.attr('checked') ) 
+			cb.attr('checked', false);
+		else
+			cb.attr('checked', 'checked');
+			
+		//loadProducts();
+	});*/
+	
+});
+
+
+function loadProducts()
+{
+	// filter
+	var j = 0;
+	var fl_arr = new Array();
+	$('input.cbfl').each(function(){
+		if( $(this).is(':checked') && $(this).val() )
+			fl_arr[j++]= $(this).val();
+	});
+	var fl_str = fl_arr.join('|');
+	
+	// filter
+	var j = 0;
+	var tp_arr = new Array();
+	$('input.cbtp').each(function(){
+		if( $(this).is(':checked') && $(this).val() )
+			tp_arr[j++]= $(this).val();
+	});
+	var tp_arr = tp_arr.join('|');
+	
+	var promt = '';
+	if($('.cbpmt').is(':checked')) promt = $('.cbpmt').val();
+	//alert(promt);
+	//var url = 'index.php?m=product&t=loc-san-pham&catid=21';
+	var url = 'san-pham/loc-san-pham.html?catid=21';
+	if(fl_str) url += '&fid='+fl_str;
+	if(tp_arr) url += '&tp='+tp_arr;
+	if(promt) url += '&promt='+promt;
+	var ajax = new SAjax();
+	ajax.requestFile = url;
+	ajax.setVar("aj",1);
+	ajax.setVar("tpl",'m');
+	ajax.element = 'replaceme';
+	ajax.method = 'POST';
+	ajax.onCompletion = whenCompletedLoadProduct;
+	ajax.runAJAX();
+	
+	rurl(url);
+}
+function whenCompletedLoadProduct(){
+	$('.cbpmt').click(function(){
+	loadProducts();
+	});
+	setloadmore();
+
+}
+</script>
+
+<script language="javascript">
+$(document).ready(function(){
+	$('.mobile-filter > .title').click(function(){
+			var display = $('.mobile-filter .m-content').css('display');
+			if(display == 'none') $('.mobile-filter .m-content').slideDown(300);
+			else	$('.mobile-filter .m-content').slideUp(300);
+	});
+	
+	$('.mobile-filter .filter ul li').click(function(){
+		$('.mobile-filter .m-content').slideUp(300);
+	});
+});
+</script>
+        <div class="block blstyle1"><div class="b-title"><span>Sản phẩm bạn vừa xem</span></div>
+<div class="b-content"><p class="note">Chưa có sản phẩm nào</p>
+</div>
+</div>
+    </div>
+    
+    <div class="col-sm-9 m-content">
+    	<div class="block"><div class="b-content"><div class="breadcrumb"><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://leeandtee.vn/" title="" itemprop="url"><span itemprop="title"><img src="images/home.png" border="0" align="absmiddle" /></span></a></span><span class="symbol">&nbsp;</span><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/san-pham.html" title="Sản phẩm" itemprop="url"><span itemprop="title">Sản phẩm</span></a></span><span class="symbol">&nbsp;</span><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/tui-xach-21-a3ic.html" title="Túi xách" itemprop="url"><span itemprop="title">Túi xách</span></a></span></div></div>
+</div>
+      <div id="replaceme">
+    	
+                    <div class="title">
+                <h1 class="modheading"><span class="b">Túi xách</span></h1>
+                <div class="heading">
+                                    <div class="sort">
+                        <form class="sortfrm" action="" method="get">
+                        <input type="checkbox" class="cbpmt" value="1" name="promt" /> 
+                        Đang khuyến mãi &nbsp;  &nbsp;
+                         Sắp xếp <select name="psort" id = "sort_product" class="inputbox" onchange="this.form.submit();" ><option value="price_a" >Giá tăng dần</option><option value="price_d" >Giá giảm dần</option><option value="new" selected>Sản phẩm mới</option></select>                        </form>
+                    </div>
+                                  </div>
+                <div class="break"></div>
+            </div>
+        
+                <div class="productList">
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-memphis-mau-nau-967-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+            <span  class="icon new">New</span>                                                <a href="/tui-deo-cheo-memphis-mau-nau-967-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/7_1800x1800.jpg" border="0" alt="TÚI ĐEO CHÉO MEMPHIS MÀU NÂU" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-memphis-mau-nau-967-a3id.html">TÚI ĐEO CHÉO MEMPHIS MÀU NÂU</a></h4>
+            <a href="/product/addtoFav.html?pid=967&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">545.000đ</span><a href="/product/addtocart.html?pid=967" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-memphis-mau-nau-967-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-memphis-mau-lot-966-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+            <span  class="icon new">New</span>                                                <a href="/tui-deo-cheo-memphis-mau-lot-966-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/1_1800x1800.jpg" border="0" alt="TÚI ĐEO CHÉO MEMPHIS MÀU LỢT" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-memphis-mau-lot-966-a3id.html">TÚI ĐEO CHÉO MEMPHIS MÀU LỢT</a></h4>
+            <a href="/product/addtoFav.html?pid=966&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">545.000đ</span><a href="/product/addtocart.html?pid=966" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-memphis-mau-lot-966-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-memphis-mau-bo-965-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+            <span  class="icon new">New</span>                                                <a href="/tui-deo-cheo-memphis-mau-bo-965-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/4_1800x1800.jpg" border="0" alt="TÚI ĐEO CHÉO MEMPHIS MÀU BÒ" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-memphis-mau-bo-965-a3id.html">TÚI ĐEO CHÉO MEMPHIS MÀU BÒ</a></h4>
+            <a href="/product/addtoFav.html?pid=965&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">545.000đ</span><a href="/product/addtocart.html?pid=965" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-memphis-mau-bo-965-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-xach-tay-ahem-mau-lot-954-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-xach-tay-ahem-mau-lot-954-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/10a5464.jpg" border="0" alt="TÚI XÁCH TAY AHEM MÀU LỢT" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-xach-tay-ahem-mau-lot-954-a3id.html">TÚI XÁCH TAY AHEM MÀU LỢT</a></h4>
+            <a href="/product/addtoFav.html?pid=954&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(2) Bình luận</span>
+            <div class="info">
+               <span class="price">495.000đ</span><a href="/product/addtocart.html?pid=954" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-xach-tay-ahem-mau-lot-954-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-xach-tay-ahem-mau-nau-955-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-xach-tay-ahem-mau-nau-955-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/12a9821.jpg" border="0" alt="TÚI XÁCH TAY AHEM MÀU NÂU" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-xach-tay-ahem-mau-nau-955-a3id.html">TÚI XÁCH TAY AHEM MÀU NÂU</a></h4>
+            <a href="/product/addtoFav.html?pid=955&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">495.000đ</span><a href="/product/addtocart.html?pid=955" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-xach-tay-ahem-mau-nau-955-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-xach-tay-ahem-mau-bo-953-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-xach-tay-ahem-mau-bo-953-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/11a2981.jpg" border="0" alt="TÚI XÁCH TAY AHEM MÀU BÒ" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-xach-tay-ahem-mau-bo-953-a3id.html">TÚI XÁCH TAY AHEM MÀU BÒ</a></h4>
+            <a href="/product/addtoFav.html?pid=953&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">495.000đ</span><a href="/product/addtocart.html?pid=953" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-xach-tay-ahem-mau-bo-953-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-vivo-mau-nau-949-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-vivo-mau-nau-949-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/1a_.jpg" border="0" alt=" TÚI ĐEO BỤNG VIVO MÀU NÂU" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-vivo-mau-nau-949-a3id.html"> TÚI ĐEO BỤNG VIVO MÀU NÂU</a></h4>
+            <a href="/product/addtoFav.html?pid=949&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">395.000đ</span><a href="/product/addtocart.html?pid=949" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-vivo-mau-nau-949-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-vivo-mau-lot-948-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-vivo-mau-lot-948-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/2a_.jpg" border="0" alt="TÚI ĐEO BỤNG VIVO MÀU LỢT" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-vivo-mau-lot-948-a3id.html">TÚI ĐEO BỤNG VIVO MÀU LỢT</a></h4>
+            <a href="/product/addtoFav.html?pid=948&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">395.000đ</span><a href="/product/addtocart.html?pid=948" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-vivo-mau-lot-948-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-vivo-mau-bo-947-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-vivo-mau-bo-947-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/3a_.jpg" border="0" alt="TÚI ĐEO BỤNG VIVO MÀU BÒ" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-vivo-mau-bo-947-a3id.html">TÚI ĐEO BỤNG VIVO MÀU BÒ</a></h4>
+            <a href="/product/addtoFav.html?pid=947&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">395.000đ</span><a href="/product/addtocart.html?pid=947" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-vivo-mau-bo-947-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/cap-xach-mars-mau-nau-852-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/cap-xach-mars-mau-nau-852-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/Cap-xach-Mars-mau-nau-1.jpg" border="0" alt="CẶP XÁCH MARS MÀU NÂU" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/cap-xach-mars-mau-nau-852-a3id.html">CẶP XÁCH MARS MÀU NÂU</a></h4>
+            <a href="/product/addtoFav.html?pid=852&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">575.000đ</span><a href="/product/addtocart.html?pid=852" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/cap-xach-mars-mau-nau-852-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/cap-xach-mars-mau-lot-851-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/cap-xach-mars-mau-lot-851-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/Cap-xach-Mars-mau-lot-1.jpg" border="0" alt="CẶP XÁCH MARS MÀU LỢT" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/cap-xach-mars-mau-lot-851-a3id.html">CẶP XÁCH MARS MÀU LỢT</a></h4>
+            <a href="/product/addtoFav.html?pid=851&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">575.000đ</span><a href="/product/addtocart.html?pid=851" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/cap-xach-mars-mau-lot-851-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/cap-xach-mars-mau-bo-850-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/cap-xach-mars-mau-bo-850-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/Cap-xach-Mars-mau-bo-1.jpg" border="0" alt="CẶP XÁCH MARS MÀU BÒ " />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/cap-xach-mars-mau-bo-850-a3id.html">CẶP XÁCH MARS MÀU BÒ </a></h4>
+            <a href="/product/addtoFav.html?pid=850&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">575.000đ</span><a href="/product/addtocart.html?pid=850" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/cap-xach-mars-mau-bo-850-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-nadai-mau-nau-946-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-nadai-mau-nau-946-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/1a9788.jpg" border="0" alt="TÚI ĐEO CHÉO NADAI MÀU NÂU" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-nadai-mau-nau-946-a3id.html">TÚI ĐEO CHÉO NADAI MÀU NÂU</a></h4>
+            <a href="/product/addtoFav.html?pid=946&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">495.000đ</span><a href="/product/addtocart.html?pid=946" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-nadai-mau-nau-946-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-nadai-mau-lot-945-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-nadai-mau-lot-945-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/2a3103.jpg" border="0" alt="TÚI ĐEO CHÉO NADAI MÀU LỢT" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-nadai-mau-lot-945-a3id.html">TÚI ĐEO CHÉO NADAI MÀU LỢT</a></h4>
+            <a href="/product/addtoFav.html?pid=945&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">495.000đ</span><a href="/product/addtocart.html?pid=945" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-nadai-mau-lot-945-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-nadai-mau-bo-944-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-nadai-mau-bo-944-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/3a7089.jpg" border="0" alt="TÚI ĐEO CHÉO NADAI MÀU BÒ" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-nadai-mau-bo-944-a3id.html">TÚI ĐEO CHÉO NADAI MÀU BÒ</a></h4>
+            <a href="/product/addtoFav.html?pid=944&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">495.000đ</span><a href="/product/addtocart.html?pid=944" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-nadai-mau-bo-944-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-hoa-mau-lot-943-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-hoa-mau-lot-943-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/150a.jpg" border="0" alt="TÚI ĐEO CHÉO HOA MÀU NÂU" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-hoa-mau-lot-943-a3id.html">TÚI ĐEO CHÉO HOA MÀU NÂU</a></h4>
+            <a href="/product/addtoFav.html?pid=943&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">395.000đ</span><a href="/product/addtocart.html?pid=943" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-hoa-mau-lot-943-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-hoa-mau-lot-942-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-hoa-mau-lot-942-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/152a.jpg" border="0" alt="TÚI ĐEO CHÉO HOA MÀU LỢT" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-hoa-mau-lot-942-a3id.html">TÚI ĐEO CHÉO HOA MÀU LỢT</a></h4>
+            <a href="/product/addtoFav.html?pid=942&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">395.000đ</span><a href="/product/addtocart.html?pid=942" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-hoa-mau-lot-942-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-hoa-mau-bo-941-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-hoa-mau-bo-941-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/151a.jpg" border="0" alt="TÚI ĐEO CHÉO HOA MÀU BÒ" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-hoa-mau-bo-941-a3id.html">TÚI ĐEO CHÉO HOA MÀU BÒ</a></h4>
+            <a href="/product/addtoFav.html?pid=941&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">395.000đ</span><a href="/product/addtocart.html?pid=941" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-hoa-mau-bo-941-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-vesta-mau-nau-937-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-vesta-mau-nau-937-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/2a6867.jpg" border="0" alt="TÚI ĐEO CHÉO VESTA MÀU NÂU" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-vesta-mau-nau-937-a3id.html">TÚI ĐEO CHÉO VESTA MÀU NÂU</a></h4>
+            <a href="/product/addtoFav.html?pid=937&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">385.000đ</span><a href="/product/addtocart.html?pid=937" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-vesta-mau-nau-937-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-vesta-mau-lot-936-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-vesta-mau-lot-936-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/1a3321.jpg" border="0" alt="TÚI ĐEO CHÉO VESTA MÀU LỢT" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-vesta-mau-lot-936-a3id.html">TÚI ĐEO CHÉO VESTA MÀU LỢT</a></h4>
+            <a href="/product/addtoFav.html?pid=936&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">385.000đ</span><a href="/product/addtocart.html?pid=936" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-vesta-mau-lot-936-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-vesta-mau-bo-935-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-vesta-mau-bo-935-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/304635.jpg" border="0" alt="TÚI ĐEO CHÉO VESTA MÀU BÒ" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-vesta-mau-bo-935-a3id.html">TÚI ĐEO CHÉO VESTA MÀU BÒ</a></h4>
+            <a href="/product/addtoFav.html?pid=935&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(1) Bình luận</span>
+            <div class="info">
+               <span class="price">385.000đ</span><a href="/product/addtocart.html?pid=935" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-vesta-mau-bo-935-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-girlie-mau-nau-919-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-girlie-mau-nau-919-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/12a.jpg" border="0" alt="TÚI ĐEO CHÉO GIRLIE MÀU NÂU" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-girlie-mau-nau-919-a3id.html">TÚI ĐEO CHÉO GIRLIE MÀU NÂU</a></h4>
+            <a href="/product/addtoFav.html?pid=919&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">495.000đ</span><a href="/product/addtocart.html?pid=919" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-girlie-mau-nau-919-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-girlie-mau-lot-918-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-girlie-mau-lot-918-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/11a.jpg" border="0" alt="TÚI ĐEO CHÉO GIRLIE MÀU LỢT" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-girlie-mau-lot-918-a3id.html">TÚI ĐEO CHÉO GIRLIE MÀU LỢT</a></h4>
+            <a href="/product/addtoFav.html?pid=918&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">495.000đ</span><a href="/product/addtocart.html?pid=918" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-girlie-mau-lot-918-a3id.html" class="bg-hover"></a>
+	</div>
+	<div class="item col-xs-6 col-sm-4 col-md-3">
+    	<div class="i"><a href="/tui-deo-cheo-girlie-mau-bo-917-a3id.html" class="view">Xem ngay</a></div>
+        <div class="thumb">
+                                                            <a href="/tui-deo-cheo-girlie-mau-bo-917-a3id.html" title="">
+                <img src="/image/174/174/0/0/product/images/10a6691.jpg" border="0" alt="TÚI ĐEO CHÉO GIRLIE MÀU BÒ" />
+            </a>
+        </div>
+        <div class="bt-item">
+            <h4><a href="/tui-deo-cheo-girlie-mau-bo-917-a3id.html">TÚI ĐEO CHÉO GIRLIE MÀU BÒ</a></h4>
+            <a href="/product/addtoFav.html?pid=917&tpl=m" class="like fancybox fancybox.iframe">Thích</a>
+            <span class="comment">(0) Bình luận</span>
+            <div class="info">
+               <span class="price">495.000đ</span><a href="/product/addtocart.html?pid=917" class="cart"></a>                 
+            </div>
+        </div>
+        <a href="/tui-deo-cheo-girlie-mau-bo-917-a3id.html" class="bg-hover"></a>
+	</div>
+</div>
+<br class="break" />
+                <div id="contenthere"></div>
+<div class="loadmorelinks"><span>Đầu <b>&lsaquo;&lsaquo;</b></span><span>Trước <b>&lsaquo;</b></span><span class="active">1</span><a href="/tui-xach-21-a3ic.html?page=2" class="ppage">2</a><a href="/tui-xach-21-a3ic.html?page=3" class="ppage">3</a><a href="/tui-xach-21-a3ic.html?page=2"><b>&rsaquo;</b> Sau</a><a href="/tui-xach-21-a3ic.html?page=3"><b>&rsaquo;&rsaquo;</b> Cuối</a></div>
+<script language="javascript">
+function setloadmore(){
+	$('.loadmorelinks .ppage').addClass('load-more-btn');
+	$('.load-more-btn').html('Xem thêm');
+	$('.load-more-btn:not(:first)').hide();
+	$('.load-more-btn').click(function(){
+		var idx = $(this).index('.load-more-btn') + 1;
+		$(this).hide();
+		$('.load-more-btn:eq('+idx+')').show();
+		var url = $(this).attr('href');
+		querystring = 'load=1';
+		if(url.indexOf('?')) url += '&'+querystring;
+		else url += '?'+querystring;
+		$.ajax({
+		  url: url,
+		  cache: false
+		})
+	  	.done(function( html ) {
+			$( "#contenthere" ).append( html );
+	  	});
+		return false;
+  	});
+}
+$(function(){
+	setloadmore();
+});
+
+</script>      </div><!-- replacement-->
+    </div>
+</div>
+</div>                    </div><!--content-->
+              </div>
+    </div><!--body-->
+        <div class="block-4"><div class="container"><div class="row"><div class="blockbtbanner"><div class="b-content"><div class="blbanners"><div class="item"><a href="http://leeandtee.vn/banner/click/tui-deo-cheo-argo-128.html" target="_blank" title="TÚI ĐEO CHÉO ARGO"><img src="/image/400/210/0/0/banners/banner_trang_chu/W2.jpg" alt="TÚI ĐEO CHÉO ARGO" /></a></div><div class="item"><a href="http://leeandtee.vn/banner/click/vi-cam-tay-themis-129.html" target="_blank" title="VÍ CẦM TAY THEMIS"><img src="/image/400/210/0/0/banners/banner_trang_chu/W3.jpg" alt="VÍ CẦM TAY THEMIS" /></a></div><div class="item"><a href="http://leeandtee.vn/banner/click/tui-deo-cheo-helios-130.html" target="_blank" title="TÚI ĐEO CHÉO HELIOS"><img src="/image/400/210/0/0/banners/banner_trang_chu/W4.jpg" alt="TÚI ĐEO CHÉO HELIOS" /></a></div></div>		
+	
+</div>
+</div>
+<div class="blockmenu col-sm-3"><div class="b-title"><span>Thông tin Lee&Tee</span></div>
+<div class="b-content"><ul class="menu">
+	        <li><a href="/gioi-thieu-leetee.html">Giới thiệu Lee&Tee</a></li>
+            <li><a href="/tuyen-dung.html">Tuyển dụng</a></li>
+            <li><a href="/chinh-sach-bao-hanh-va-doi-tra.html">Chính sách bảo hành và đổi trả</a></li>
+            <li><a href="/chinh-sach-bao-mat.html">Chính sách bảo mật</a></li>
+            <li><a href="/lien-he.html">Liên hệ</a></li>
+    </ul>
+</div>
+</div>
+<div class="blockmenu col-sm-3"><div class="b-title"><span>Hỗ trợ khách hàng</span></div>
+<div class="b-content"><ul class="menu">
+	        <li><a href="/huong-dan-mua-hang.html">Hướng dẫn mua hàng</a></li>
+            <li><a href="/huong-dan-doi-tra-hang.html">Hướng dẫn đổi trả hàng</a></li>
+            <li><a href="/chinh-sach-van-chuyen.html">Chính sách vận chuyển</a></li>
+            <li><a href="/cau-hoi-thuong-gap.html">Câu hỏi thường gặp</a></li>
+    </ul>
+</div>
+</div>
+<div class="blockmenu col-sm-3"><div class="b-title"><span>Hợp tác với Lee&Tee</span></div>
+<div class="b-content"><ul class="menu">
+	        <li><a href="/doi-tac-quang-cao.html">Đối tác quảng cáo</a></li>
+            <li><a href="/ban-hang-voi-leetee-affiliate.html">Bán hàng với Lee&Tee Affiliate</a></li>
+            <li><a href="/mo-cua-hang-leetee.html">Mở cửa hàng Lee&Tee</a></li>
+            <li><a href="/thanh-vien-vip.html">Thành viên VIP</a></li>
+    </ul>
+</div>
+</div>
+<div class="blocksocial col-sm-3"><div class="b-title"><span>Kết nối</span></div>
+<div class="b-content"><div class="row">
+<div class="col-sm-6">
+<p><a href="https://www.facebook.com/tuidathoitrang" target="_blank"><img style="vertical-align: middle;" src="uploads/images/social/icon-fa.png" /></a><a href="https://www.facebook.com/leeandtee" target="_blank"> Facebook</a></p>
+<p><a href="https://plus.google.com/+LeeandteeVnn/posts" target="_blank"><img style="vertical-align: middle;" src="uploads/images/social/icon-go.png" alt="Google+" /></a> <a href="https://plus.google.com/+LeeandteeVnn/posts" target="_blank">Google+</a></p>
+<p><a href="https://twitter.com/leeandteevn" target="_blank"><img style="vertical-align: middle;" src="uploads/images/social/icon-twitter.png" alt="Twitter" /></a> <a href="https://twitter.com/leeandteevn" target="_blank">Twitter</a></p>
+<p><a href="https://www.pinterest.com/leeandteevnn/" target="_blank"><img style="vertical-align: middle;" src="uploads/images/social/icon-pin.png" alt="Pin" /></a> <a href="https://www.pinterest.com/leeandteevnn/" target="_blank">Pinterest</a></p>
+</div>
+<div class="col-sm-6 reg"><a href="http://online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=9429" target="_blank"><img src="uploads/images/dang-ky-bo-cong-thuong.jpg" /></a></div>
+</div></div>
+</div>
+</div></div></div>    <div class="block-5"><div class="container"><div class="row"><div class="blocksocial col-sm-5"><div class="b-content"><p><a target="_blank" href="https://www.facebook.com/leeandtee"><img src="uploads/images/social/l-facebook.png" alt="Facebook" /></a> <a target="_blank" href="https://plus.google.com/+LeeandteeVnn/"><img src="uploads/images/social/l-googleplus.png" alt="Google+" /></a> <a target="_blank" href="https://twitter.com/leeandteevn"><img src="uploads/images/social/l-twitter.png" alt="Twitter" /></a> <a target="_blank" href="https://www.youtube.com/user/LeeandTeevn"><img src="uploads/images/social/l-youtube.png" alt="Youtube" /></a> <a target="_blank" href="https://www.linkedin.com/today/author/leeandteevn"><img src="uploads/images/social/l-in.png" alt="In" /></a> <a target="_blank" href="https://www.pinterest.com/leeandteevnn"><img src="uploads/images/social/l-pinterest.png" alt="Pinterest" /></a></p></div>
+</div>
+<div class="blocknewsletter col-sm-7"><div class="b-content"><div class="b-newsletter">
+	<div class="title col-sm-4">Đăng ký nhận bản tin</div>
+    <div class="col-sm-8 no-pad-r">
+    <div class="box">
+    <form action="index.php" method="post" class="validateformsubscribe">
+        
+            <input type="text" name="email" class="inputbox" onblur="if(this.value=='') this.value='Email của bạn...';" onfocus="if(this.value=='Email của bạn...') this.value = '';" value="Email của bạn..." />
+            <input type="submit" value="" class="button" />
+       
+        <input type="hidden" name="m" value="newsletter" />
+        <input type="hidden" name="t" value="addsubscriber" />
+        <input type="hidden" name="177cef3d6a7c8f643a8eefe829da5f63" value="1" />    </form>
+    </div>
+     </div>
+</div>
+</div>
+</div>
+</div></div></div>	<div id="stl-bottom"><div class="container"><div class="row"><div class="block col-sm-2"><div class="b-title"><span>Liên kết</span></div>
+<div class="b-content"><ul class="menu">
+	        <li><a href="/gioi-thieu-leetee.html">Giới thiệu</a></li>
+            <li><a href="/lien-he.html">Liên hệ</a></li>
+            <li class="active"><a href="/he-thong-cua-hang-leetee.html">Hệ Thống Cửa Hàng Lee&Tee</a></li>
+    </ul>
+</div>
+</div>
+<div class="block col-sm-3"><div class="b-title"><span>Danh mục</span></div>
+<div class="b-content"><ul class="menu">
+	        <li><a href="http://leeandtee.vn/">Trang chủ</a></li>
+            <li><a href="/san-pham.html">Sản phẩm</a></li>
+            <li><a href="/lookbooks.html">Lookbooks</a></li>
+            <li><a href="/blogs.html">Blogs</a></li>
+            <li><a href="/khuyen-mai.html">Khuyến mãi</a></li>
+            <li><a href="/tin-tuc.html">Tin tức</a></li>
+    </ul>
+</div>
+</div>
+<div class="blockreseller col-sm-4"><div class="b-title"><span>Hệ Thống Cửa Hàng Lee&Tee</span></div>
+<div class="b-content"><ul>
+	<li><a href="/he-thong-cua-hang-leetee.html?catid=1">Cửa hàng Lee&amp;Tee Hồ Chí Minh</a></li>
+	<li><a href="/he-thong-cua-hang-leetee.html?catid=2">Cửa hàng Lee&amp;Tee Hà Nội</a></li>
+	<li><a href="/he-thong-cua-hang-leetee.html?catid=23">Cửa hàng Lee&amp;Tee Cần Thơ</a></li>
+	<li><a href="/he-thong-cua-hang-leetee.html?catid=24">Cửa hàng Lee&amp;Tee Gia Lai</a></li>
+	<li><a href="/he-thong-cua-hang-leetee.html?catid=30">Cửa hàng Lee&amp;Tee Đà Nẵng</a></li>
+	<li><a href="/he-thong-cua-hang-leetee.html?catid=34">Cửa hàng Lee&amp;Tee Hải Dương</a></li>
+	<li><a href="/he-thong-cua-hang-leetee.html?catid=39">Cửa hàng Lee&amp;Tee Khánh Hoà</a></li>
+	<li><a href="/he-thong-cua-hang-leetee.html?catid=40">Cửa hàng Lee&amp;Tee Kiên Giang</a></li>
+	<li><a href="/he-thong-cua-hang-leetee.html?catid=44">Cửa hàng Lee&amp;Tee Lâm Đồng</a></li>
+</ul>
+</div>
+</div>
+<div class="blockcontact col-sm-3"><div class="b-title"><span>Liên hệ Lee&Tee</span></div>
+<div class="b-content"><div class="contact"><strong>CÔNG TY TNHH LEE&amp;TEE VIỆT NAM</strong><br />MST : <strong>0311670014</strong><br />Hotline: <span><span><b>08.9977.2020</b></span></span></div>
+<div class="contact"><span>Thời gian nhận cuộc gọi: 08:00 - 17:30 (Thứ 2 - Thứ 7)</span><span><span></span></span><br />ĐT đặt hàng: <strong><b><b>08.9977.2020</b></b></strong></div>
+<div class="contact"><strong><a target="_blank" href="he-thong-cua-hang-leetee.html">HỆ THỐNG CỬA HÀNG LEE&amp;TEE TOÀN QUỐC</a></strong></div></div>
+</div>
+</div><br class="break" /></div></div>
+	<div id="stl-footer"><div class="container"><script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 976929331;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/976929331/?value=0&guid=ON&script=0"/>
+</div>
+</noscript><!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1734346776826746');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1734346776826746&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '338911006460530');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=338911006460530&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '120491215139347'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=120491215139347&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code --><div class="block"><div class="b-content"><style><!--
+    #fb_widget .label{position:relative;float:left;color:#005f46;min-width:20%}
+    #fb_widget .field{position:relative;float:left}
+    #fb_widget .element{border:0 dotted red;margin:12px;padding:5px;min-height:25px;clear:both}
+    #fb_widget .field input{margin:0;padding:0}
+    #fb_link.disabled{opacity:0;visibility:hidden;}#fb_link.disabled .tooltiptext{font-size:0}
+    #fb_link.disabled .tooltiptext:after{content:"OFFLINE";font-size:12px}
+    #fb_link.email_us .tooltiptext{font-size:0}
+    #img_email{display:none;}
+    #fb_link.email_us .tooltiptext:after{content:"EMAIL US";font-size:12px}
+    .fbmessenger{position:fixed;bottom:15px;right:15px;z-index:999999999}
+    .fbmessenger span{z-index:999999999;position: absolute;}
+    .fbmessenger.wpostop_left{left:2px;right:initial;top:0;bottom:initial}
+    .tooltiptext.wpostop_left{left:60px;right:initial;top:8px;bottom:initial}
+    .fbmessenger.wpostop_right{left:initial;right:15px;top:0;bottom:initial}
+    .tooltiptext.wpostop_right{left:initial;right:60px;top:8px;bottom:initial}
+    .fbmessenger.wposbottom_left{left:2px;right:initial;top:initial;bottom:0}
+    .tooltiptext.wposbottom_left{left:60px;right:initial;top:initial;bottom:10px}
+    .fbmessenger.wposbottom_right{left:initial;right:15px;top:initial;bottom:0}
+    .tooltiptext.wposbottom_right{left:initial;right:60px;top:initial;bottom:10px}
+    .fbmessenger img{width:50px;filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3));-webkit-filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3))}
+    .tooltiptext{width:120px;background-color:#fff;color:#2c2c2c;text-align:center;padding:5px 0;border:1px solid #eee;border-radius:6px;position:fixed;bottom:30px;right:75px;font-family:inherit;font-size:inherit;text-transform:uppercase;filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3));-webkit-filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3))}
+--></style>
+<div class="code"><a onclick="window.open('http://m.me/leeandtee','','width=530,height=580');return false;" style="display: inline;" target="_blank" href="http://m.me/leeandtee" id="fb_link">
+<div class="fbmessenger wposbottom_right"><img src="img.php?fn=msg.png&amp;p=THk5MWNHeHZZV1J6" id="img_msg" /><span class="tooltiptext wposbottom_right">Tư vấn Online</span></div>
+</a></div>
+<!--Facebook Chat Widget / --></div>
+</div>
+</div></div>
+</div><!-- primary-->
+
+</body>
+</html>

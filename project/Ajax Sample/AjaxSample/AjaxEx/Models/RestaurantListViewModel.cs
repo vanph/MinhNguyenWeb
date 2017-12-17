@@ -12,5 +12,6 @@ namespace AjaxEx.Models
         public string City { get; set; }
         public string Country { get; set; }
         public int CountOfReviews { get; set; }
+        public string SearchTerm { get; set; }
     }
 }

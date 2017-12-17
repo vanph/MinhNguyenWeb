@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+	/*styling for breadcumb */
+	.list-inline li a {
+		font-size: 11px;
+		color:#999;
+	}
+	
+	
+	.form-content {
+		padding-top: 90px;	
+	}
+	.question {
+		margin-bottom: 10px;	
+	}
+	.question form {
+		padding-left: 10px;	
+	}
+	
+	
+	
+	.title-page {
+		text-align:center;
+		margin-bottom: 50px;
+		margin-top: 20px;
+		letter-spacing: 2px;
+		padding-top: 30px;
+		border-top: 1px solid #999;
+	}
+	

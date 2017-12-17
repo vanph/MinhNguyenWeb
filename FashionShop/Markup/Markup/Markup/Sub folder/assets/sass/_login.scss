@@ -1,0 +1,156 @@
+$left-width: 40%;
+$right-width: 60%;
+$form-height: 50%;
+//$form-primary-color: #16a085;
+$form-primary-color: rgba(black, 0.8);
+$form-bg-color: black;
+$left-bg-color: $form-primary-color;
+$right-bg-color: white;
+$facebook-color: blue;
+$google-color: red;
+$twitter-color: green;
+
+@media(min-height: 500px) {
+  $form-height: 100%;
+}
+// mixins
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+@include placeholder {
+  color: rgba($form-primary-color, .5);
+  font-weight: 200;
+}
+
+#form-container {
+  margin-top: 10%;
+  border: 1px solid $form-primary-color;
+  max-height: $form-height;
+  overflow: hidden;
+  background-color: $form-primary-color;
+}
+.left-panel {
+  color: white;
+  padding-top: 50px;
+  float: left;
+  .icon {
+    font-size: 4em;
+  }
+  .title {
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  ul {
+    margin-top: 30px;
+    padding-left: 18px;
+    list-style-type: circle;
+    text-align: left;
+    font-size: 1.2em;
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}
+.right-panel {
+  background-color: $right-bg-color;
+  padding: 50px 20px;
+}
+
+#login-form, #register-form {
+  //width: 100%;
+  .title {
+    font-size: 3em;
+  }
+  input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid gray;
+    height: 50px;
+    font-size: 1.2em;
+    padding-bottom: 2px;
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $form-primary-color;
+    }
+  }
+  #username, #password {
+    width: 100%;
+  }
+  #firstName, #lastName {
+    width: 49%;
+  }
+  #lastName {
+    float: right;
+  }
+  .forgot-password {
+    padding-top: 10px;
+  }
+  .button {
+    margin-top: 20px;
+  }
+  button {
+    float: left;
+    border-radius: 30px !important;
+    border: 1px solid $form-primary-color;
+    background-color: white;
+    color: black;
+    //background-color: $form-primary-color;
+    &:focus {
+      outline: 0 !important;
+    }
+  }
+  .social-login {
+    line-height: 50px;
+    vertical-align: middle;
+    float: right;
+    ul {
+      line-height: 40px;
+      vertical-align: middle;
+    }
+    li:first-child {
+      color: gray;
+      padding-right: 0;
+    }
+    li:not(:first-child){
+      margin-left: 20px;
+      font-size: 1.5em;
+      color: white;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      border-radius: 50%;
+      &:hover {
+        cursor: pointer;
+      }
+      i {
+        line-height: 40px;
+        vertical-align: middle;
+      }
+
+    }
+    li:nth-child(2) {
+      background-color: rgba($facebook-color, .8);
+      &:hover {
+        background-color: $facebook-color;
+      }
+    }
+    li:nth-child(3) {
+      background-color: rgba($google-color, .8);
+      &:hover {
+        background: $google-color;
+      }
+    }
+    li:nth-child(4) {
+      background-color: rgba($twitter-color, .8);
+      &:hover {
+        background-color: $twitter-color;
+      }
+    }
+  }
+}

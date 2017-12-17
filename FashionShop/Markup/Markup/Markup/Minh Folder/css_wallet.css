@@ -1,0 +1,283 @@
+@charset "utf-8";
+/* CSS Document */
+.uniad-banner-image {
+	margin-left: 20px;	
+}
+body{
+	color: #333333;
+	}
+#male_stuff{
+	margin-left:3%;
+	margin-top: 10px;;
+	}
+.thumb{
+	margin-left:20%;
+	margin-top:10px;
+	}
+.img-m1{
+	width:3%;
+	}
+.top{
+	border-bottom: 1px solid black;
+	}
+.box{
+	margin-top:32px;
+	margin-left:40%;
+	
+	}
+#order{
+	margin-top:23px;
+	margin-left:0%;
+	}
+#check{  
+	margin-top:23px;
+	}	
+	
+
+	
+.sex{
+	border-bottom: 1px solid #999;
+padding-top: 5px;
+	}
+.sex h1{
+	font-family: inherit;
+	font-size:20px;
+	}
+.sex ul li a{
+   text-decoration: none;
+	font-family:inherit;
+	font-size:18px;
+	list-style:none;
+
+	}	
+.sex ul li  {
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.style{
+	border-bottom: 1px solid #999;
+	}
+.style h2{
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size:20px;
+	}
+.style ul li a{
+	   text-decoration: none;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+		font-size:18px;
+	}
+.style ul li{
+	 list-style: none;
+    text-decoration: none;
+	}
+	
+	
+.uses{
+	border-bottom: 1px solid #999;
+	}
+.uses h3{
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size:20px;
+	}
+.uses ul li a{
+	 text-decoration: none;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size:18px;
+	}
+.uses ul li{
+	 list-style: none;
+    text-decoration: none;
+	}
+	
+
+.color h4{
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size:20px;
+	}
+.color ul li a{
+	   text-decoration: none;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+		font-size:18px;
+	}
+.color ul li{
+	 list-style: none;
+    text-decoration: none;
+	}
+
+.row1{
+	height: 100%; 
+	background-color: #fafafa;
+	}
+	
+	.img-m2{
+	 height : 200px;
+	 width: 200px;
+	 }
+	 
+.row2{
+	/*border:1px solid red; */
+	}
+	 
+.blacksb a{
+	list-style:none;
+	text-decoration:none;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size:20px;
+	text-align:center;
+	}
+	
+.blacksb {
+	text-align:center;
+}
+
+div.row2:hover img{
+		opacity: 0.5;
+		-webkit-transition-timing-function: ease-in-out;;
+		transition: all 1s;
+	}
+	
+div.row2 > div {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		text-align: center;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0.5s linear;
+		z-index: 3;
+}
+	
+div.row2 > div a {
+		border: 3px solid #d3d3d4;
+		color: #d3d3d4;
+		font-size: 30px;
+		display: inline-block;
+		padding: 3px 15px;
+		text-decoration: none;
+		border-radius: 3px;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 2px #666;
+		transition: all 1s ease-out 1s;
+}
+
+div.row2:hover > div {
+		visibility: visible;
+  		opacity: 1;
+	}
+	
+.ad{
+	margin-left:100px;
+	}
+.row5{
+	border:1px solid black; 
+	height:30px; 
+	background-color: black;
+	border-radius:20px;
+	text-align:center;
+	
+}
+
+.row5:hover {
+	background-color:#666;
+	transition: all 0.4s;	
+}
+
+.row5 a {
+	text-transform:uppercase;
+	color: white;
+	text-decoration:none;
+}
+
+.row6{
+	padding-top:10px;
+	height:40px; 
+	text-align:center;
+}
+
+.row6 a  {
+	color: black;
+	text-decoration:none;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.choice1{
+	margin-right:5px;
+	background: #fff;
+    color: #333333;
+    border-radius:3px;
+    box-shadow: 1px 1px 0px #999;
+    font-weight: bold;
+    font-size: 12px;
+   }
+
+.number{
+	background: #fff;
+    color: #333333;
+    border-radius:3px;
+    box-shadow: 1px 1px 0px #999;
+    font-weight: bold;
+    font-size: 12px;
+	margin:3px;
+	}
+
+.choice2{
+	margin-left:5px;
+	background: #fff;
+    color: #333333;
+    border-radius:3px;
+    box-shadow: 1px 1px 0px #999;
+    font-weight: bold;
+    font-size: 12px;
+	}
+	
+.row {
+	margin-right:0px;
+}
+
+
+
+@media screen and (max-width: 736px){
+	
+	.img2{
+		margin-top:5px;
+		}
+	.row0{
+		margin-top:10px;
+		display:inline-block;
+	}
+	.filter-price{
+		width:100px;
+	}
+	
+	.filter-item{
+		width:100px;
+	}
+	.row1{
+		text-align:center;
+	}
+	#check{
+		margin-left:10px;
+		}
+	.box{
+		margin-left:30px;
+		}
+	.top{
+	border-bottom:none;
+	}
+	.img-m1{
+		width:7%;
+		}
+	}
+
+@media screen and (max-width: 1024px){
+	
+	}
+		
+	
+	
+	
+	
+	
