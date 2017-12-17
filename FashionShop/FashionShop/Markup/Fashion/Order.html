@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Order</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Owl library -->
+
+<!-- End Owl slider -->
+<!-- CSS+JS -->
+<link rel="stylesheet" href="css/template.css"/>
+<link rel="stylesheet" href="css/home.css"/>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<!-- Section 1: Menu header -->
+<header>
+
+     <nav id="navtop" class="navbar navbar-default ">
+        <div >
+            <div class=" navbar-header">
+                 <a href="home.html" class="navbar-brand" class="active" ><img id="logo" src="img/cropted.png"/></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class=" nav navbar-nav nav_center">
+                <li><a href="ProductMale.html">Men</a></li>
+                <li><a href="ProductFemale.html">Women</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Products  <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="sub-item"><a href="#">Backpacks</a></li>
+                        <li class="sub-item"><a href="#">Bags</a></li>
+                        <li class="sub-item"><a href="#">Wallets</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right nav_right">
+                <li>
+                    <form class="navbar-form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                                <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                                </div>
+                         </div> 
+                    </form>
+                </li>
+                <li id="login"><a href="Login.html"><span class="glyphicon glyphicon-user"></span></a></li>
+                <li id="bag1"><a href="Order.html"><span class="glyphicon glyphicon-shopping-cart"></span>(<span id="addCart">0</span>)</a></li>
+            </ul>
+            </div>
+            
+        </div>
+    </nav>
+
+</header>
+
+<div class="container" id="shopping-cart">
+    <div class="row no-gutters">
+        <div class="col-md-8 col-sm-8 col-xs-12 border-right">
+            <div class="text-center">
+                <p class="cart-title">YOUR SHOPPING CART</p>
+            </div>
+            <table class="table table-responsive order-detail">
+                <thead>
+                    <tr>
+                        <th class="text-center">Image</th>
+                        <th class="text-center">Product Name</th>
+                        <th class="text-center">Color</th>
+                        <th class="text-center">Unit Price</th>
+                        <th class="text-center">Quantity</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Remove</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr>
+                        <td><img src="https://pubcdn3.ivymoda.com/files/product/2017/09/26/7609d05089b8d1358f5c5bc3a1baad13.jpg" alt="" class="product-thumbnail"></td>
+                        <td><p>Bag code 51A0751</p></td>
+                        <td><p color="green"></p></td>
+                        <td class="unit-price"><p>300.000</p></td>
+                        <td class="quantity"><input type="text" value="1" class="text-center"></td>
+                        <td class="total"><p>300.000</p></td>
+                        <td><p><i class="fa fa-remove btn-sm"></i></p></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://pubcdn3.ivymoda.com/files/product/2017/10/07/a3cad716b2171296c4d684c4992ddfe3.png" alt="" class="product-thumbnail"></td>
+                        <td><p>Bag code 51A0709</p></td>
+                        <td><p color="pink"></p></td>
+                        <td class="unit-price"><p>400.000</p></td>
+                        <td class="quantity"><input type="text" value="1" class="text-center"></td>
+                        <td class="total"><p>400.000</p></td>
+                        <td><p><i class="fa fa-remove btn-sm"></i></p></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12" id="cart-summary-container">
+            <table class="table table-responsive" id="cart-summary">
+                <thead>
+                <tr>
+                    <th class="text-center" colspan="2">SUMMARY</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Total quantity</td>
+                    <td class="text-right">2</td>
+                </tr>
+                <tr>
+                    <td>Total payment</td>
+                    <td class="text-right">1.300.000</td>
+                </tr>
+                </tbody>
+            </table>
+            <p class="text-center text-thin">The shipping will be free of charge if your total payment exceeds 3.000.000</p>
+            <div class="button-group">
+                <div>
+                    <button class="btn cart-button-continue">CONTINUE SHOPPING</button>
+                    <button class="btn cart-button-checkout">CHECK OUT</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="footer-bl">
+    <div class="Footer container">
+        <div class="footerRow row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-2 menuBar">
+                <div class="b-title">
+                    <span id="menu1">Menu</span>
+                </div>
+                <div class="b-content">
+                    <ul>
+                                                <li><a class="ft-item" href="About.html">About Us</a></li>
+                        <li><a class="ft-item" href="Contact.html">Contact Us</a></li>
+                        <li><a class="ft-item" href="Sitemap.html">Site Map</a></li>
+                        <li><a class="ft-item" href="Feedback.html">Feed back</a></li>
+                        <li><a class="ft-item" href="Gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 Info">
+                <div class="b-title">
+                    <span>Contact Bag&Bag </span>
+                </div>
+                <div class="b-content">
+                    
+                    <span class="glyphicon glyphicon-home"></span>
+                    No. 16 Duy Tan Streets, Hanoi, VietNam
+                    </br>
+                    <span class="glyphicon glyphicon-print"></span>
+                    Tax Number :
+                    <span>1234435678</span>
+                    </br>
+                    <span class="glyphicon glyphicon-phone"></span>
+                    Phone Number : 
+                    <span>
+                    01633364019
+                    </span></br>
+                    <span class="glyphicon glyphicon-time"></span>
+                    Working time from 9 am to 6 pm
+                </div>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+</div>  
+
+<div  id="lastrow">
+        Bag&Bag Company Ltd.
+</div>
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+
+</body>
+</html>

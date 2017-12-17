@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Home Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Css of template -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/template.css"/>
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body class="active">
+<!-- Header -->
+<header>
+
+     <nav id="navtop" class="navbar navbar-default ">
+        <div >
+            <div class=" navbar-header">
+                 <a href="home.html" class="navbar-brand" class="active" ><img id="logo" src="img/cropted.png"/></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class=" nav navbar-nav nav_center">
+                <li><a href="ProductMale.html">Men</a></li>
+                <li><a href="ProductFemale.html">Women</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Products  <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="sub-item"><a href="#">Backpacks</a></li>
+                        <li class="sub-item"><a href="#">Bags</a></li>
+                        <li class="sub-item"><a href="#">Wallets</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right nav_right">
+                <li>
+                    <form class="navbar-form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                                <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                                </div>
+                         </div> 
+                    </form>
+                </li>
+                <li id="login"><a href="Login.html"><span class="glyphicon glyphicon-user"></span></a></li>
+                <li id="bag1"><a href="Order.html"><span class="glyphicon glyphicon-shopping-cart"></span>(<span id="addCart">0</span>)</a></li>
+            </ul>
+            </div>
+            
+        </div>
+    </nav>
+
+</header>
+
+
+<div class="container">
+    <div class="row no-gutters" id="form-container">
+        <div class="col-xs-12 no-gutters">
+            <div class="row no-gutters">
+                <div class="col-md-5 hidden-sm hidden-xs left-panel">
+                    <p class="icon text-left"><span>As a member</span></p>
+                    <ul>
+                        <li>Auto fill in the checkout form</li>
+                        <li>Manage your order history</li>
+                        <li>Have updates on the latest products</li>
+                    </ul>
+                    <!--</div>-->
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12 right-panel">
+                    <form action="#" id="login-form">
+                        <p class="title">Login</p>
+                        <input type="text" id="username" placeholder="Username">
+                        <input type="text" id="password" placeholder="Password">
+                        
+                        <p class="text-right forgot-password"><a href="register.html">Register</a> | <a href="#"> Forgot password</a></p>
+                        <div>
+                            <div class="button">
+                                <button class="btn btn-success btn-lg">LOGIN</button>
+                            </div>
+                            <div class="social-login">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        Or login with
+                                    </li>
+                                    <li class="list-inline-item"><i class="fa fa-facebook circle"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-google circle"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-twitter circle"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+<!-- Footer page -->
+
+<div class="footer-bl">
+    <div class="Footer container">
+        <div class="footerRow row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-2 menuBar">
+                <div class="b-title">
+                    <span id="menu1">Menu</span>
+                </div>
+                <div class="b-content">
+                    <ul>
+                        <li><a class="ft-item" href="About.html">About Us</a></li>
+                        <li><a class="ft-item" href="Contact.html">Contact Us</a></li>
+                        <li><a class="ft-item" href="Sitemap.html">Site Map</a></li>
+                        <li><a class="ft-item" href="Feedback.html">Feed back</a></li>
+                        <li><a class="ft-item" href="Gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 Info">
+                <div class="b-title">
+                    <span>Contact Bag&Bag </span>
+                </div>
+                <div class="b-content">
+                    
+                    <span class="glyphicon glyphicon-home"></span>
+                    No. 16 Duy Tan Streets, Hanoi, VietNam
+                    </br>
+                    <span class="glyphicon glyphicon-print"></span>
+                    Tax Number :
+                    <span>1234435678</span>
+                    </br>
+                    <span class="glyphicon glyphicon-phone"></span>
+                    Phone Number : 
+                    <span>
+                    01633364019
+                    </span></br>
+                    <span class="glyphicon glyphicon-time"></span>
+                    Working time from 9 am to 6 pm
+                </div>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+</div>  
+
+
+
+<div  id="lastrow">
+        Bag&Bag Company Ltd.
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>
+
+
+
+
+
+

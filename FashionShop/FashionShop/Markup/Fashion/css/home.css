@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* CSS Document */
+	/* top menu */
+	body .navbar-default {
+		color:#000;	
+	}
+	
+	.navbar {
+		position: fixed;
+		z-index: 999;
+		width:100%;
+		border-radius: 0px;
+		
+		background-color: rgba(255, 255, 255, 0.3);
+		transition: all 0.2s;
+		border: 0px;
+		
+		
+	}
+	 
+	.darkHeader {
+		background-color: rgba(255, 255, 255, 1);
+		color:#000;
+		!important;	
+	}
+	
+	
+	#owl-demo .item {
+		display: block;
+    	width: 100%;
+    	height: auto;
+	}
+	
+	/*Style for itemList */
+	.block1 h3 {
+		font-size: 26px;
+		text-align: center;	
+		text-transform:uppercase;
+		font-weight: bold;
+		letter-spacing: 2px;
+		padding-bottom: 10px;
+		padding-top: 5px;
+	}
+	.block1 #content-1 {
+		margin-bottom: 15px;
+		margin-top: 40px;	
+	
+	}
+	
+	
+	.imageMenu {
+		
+		max-width: 100%;	
+	}
+	
+	.block1 .itemList h4  {
+		text-align: center;
+		color: #333;
+		text-transform: uppercase;
+		font-size: 22px;
+		
+	}
+	.block1 .itemList h4 a {
+		color: inherit;	
+		text-decoration: none;
+	}
+	.block1 .itemList .item {
+		border-right: 1px solid;
+	}
+	
+	/*hover effect */
+	img.imageMenu:hover {
+		opacity: 0.7;
+		-webkit-transition-timing-function: ease-in-out;;
+		transition: all 0.5s;
+	}
+	
+	.thumb > div {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		text-align: center;
+		display: none;
+		z-index: 3;
+	}
+	
+	.thumb > div a
+	{
+		border: 3px solid #d3d3d4;
+		color: #d3d3d4;
+		font-size: 30px;
+		display: inline-block;
+		padding: 3px 15px;
+		text-decoration: none;
+		border-radius: 3px;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 2px #666;
+		transition: all 0.2s ease-out 0.2;
+	}
+	.thumb:hover > div {
+		display:block;
+		transition: all 2s;
+	}
+	
+	/* brand slider */
+	#owl-demo1 .item{
+  		background: #42bdc2;
+  		padding: 30px 0px;
+  		margin: 10px;
+  		color: #FFF;
+  		-webkit-border-radius: 3px;
+  		-moz-border-radius: 3px;
+  		border-radius: 3px;
+  		text-align: center;
+	}
+	
+	.br-list {
+		margin-top: 30px;
+		margin-bottom: 15px;
+		text-align:center;
+		text-transform:uppercase;
+		font-size: 26px;
+		font-weight: bold;
+		letter-spacing: 2px;	
+	}
+	
+	
+	/* Responsive for image */
+	
+	@media (max-width:1366px) {
+		.img-slider {
+			width: 100%;
+		}
+	}
+	@media (max-width:1024px) {
+		.img-slider {
+			width: 100%;
+		}
+	}
+	
+	/* Styling for brandlist */ 
+	
+	.item-brand img {
+		display:block;
+		width: 100%;
+	}
