@@ -57,8 +57,8 @@ body{
 
 .title-list {
     font-size: 17px !important;
-    border-bottom: 1px solid #ff5400;
-    background: #ff5400;
+    border-bottom: 1px solid black;
+
 }
 
 .list-menu-box li {
@@ -99,7 +99,7 @@ a {
 .pr-d a{
 		border: 3px solid #d3d3d4;
 		color: #d3d3d4;
-		font-size: 30px;
+		font-size: 20px;
 		display: inline-block;
 		padding: 3px 15px;
 		text-decoration: none;
@@ -240,4 +240,6 @@ a {
 	
 	
 	
-	
+.content1{
+	padding-top: 2%;
+}

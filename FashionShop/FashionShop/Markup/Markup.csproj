@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0DF12F5C-2BD9-40CA-B480-DE149877498D}</ProjectGuid>
+    <ProjectGuid>{5E150B2C-B89F-4A87-A40E-22B94F7F08EF}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -65,98 +65,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Deployment">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure">
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Fashion\About.html" />
-    <Content Include="Fashion\Contact.html" />
-    <Content Include="Fashion\css\bootstrap-theme.css" />
-    <Content Include="Fashion\css\bootstrap.min.css" />
-    <Content Include="Fashion\css\contact.css" />
-    <Content Include="Fashion\css\feedback.css" />
-    <Content Include="Fashion\css\home.css" />
-    <Content Include="Fashion\css\Productmale.css" />
-    <Content Include="Fashion\css\style.css" />
-    <Content Include="Fashion\css\template.css" />
-    <Content Include="Fashion\Feedback.html" />
-    <Content Include="Fashion\font-awesome-4.7.0\css\font-awesome.css" />
-    <Content Include="Fashion\font-awesome-4.7.0\css\font-awesome.min.css" />
-    <Content Include="Fashion\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
-    <Content Include="Fashion\font-awesome-4.7.0\HELP-US-OUT.txt" />
-    <Content Include="Fashion\Gallery.html" />
-    <Content Include="Fashion\Home.html" />
-    <Content Include="Fashion\img\anh1.jpg" />
-    <Content Include="Fashion\img\bag-ladies.jpg" />
-    <Content Include="Fashion\img\bag1.jpg" />
-    <Content Include="Fashion\img\bag2.jpg" />
-    <Content Include="Fashion\img\bag3.jpg" />
-    <Content Include="Fashion\img\bag4.jpg" />
-    <Content Include="Fashion\img\bag5.jpg" />
-    <Content Include="Fashion\img\bag6.jpg" />
-    <Content Include="Fashion\img\bag7.jpeg" />
-    <Content Include="Fashion\img\bag8.jpg" />
-    <Content Include="Fashion\img\bag9.jpeg" />
-    <Content Include="Fashion\img\bagbaglogo.png" />
-    <Content Include="Fashion\img\banner.jpg" />
-    <Content Include="Fashion\img\brandlist1.jpg" />
-    <Content Include="Fashion\img\brandlist2.png" />
-    <Content Include="Fashion\img\brandlist3.jpg" />
-    <Content Include="Fashion\img\brandlist4.jpg" />
-    <Content Include="Fashion\img\brandlist5.jpg" />
-    <Content Include="Fashion\img\cropted.png" />
-    <Content Include="Fashion\img\dribbble_adidas.gif" />
-    <Content Include="Fashion\img\dribbble_adidas_fixed.gif" />
-    <Content Include="Fashion\img\home.png" />
-    <Content Include="Fashion\img\img1.jpg" />
-    <Content Include="Fashion\img\logo1.png" />
-    <Content Include="Fashion\img\slider1.jpg" />
-    <Content Include="Fashion\img\slider2.jpg" />
-    <Content Include="Fashion\img\slider3.jpg" />
-    <Content Include="Fashion\js\bootstrap.min.js" />
-    <Content Include="Fashion\js\home.js" />
-    <Content Include="Fashion\js\jquery-3.2.1.min.js" />
-    <Content Include="Fashion\js\login.js" />
-    <Content Include="Fashion\js\OWL-carolsell\owl.carousel.css" />
-    <Content Include="Fashion\js\OWL-carolsell\owl.carousel.js" />
-    <Content Include="Fashion\js\OWL-carolsell\owl.carousel.min.js" />
-    <Content Include="Fashion\js\OWL-carolsell\owl.theme.css" />
-    <Content Include="Fashion\js\OWL-carolsell\owl.transitions.css" />
-    <Content Include="Fashion\Login.html" />
-    <Content Include="Fashion\Order.html" />
-    <Content Include="Fashion\ProductFemale.html" />
-    <Content Include="Fashion\ProductMale.html" />
-    <Content Include="Global.asax" />
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Fashion\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Fashion\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
@@ -191,6 +99,14 @@
     <Content Include="Fashion\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="Fashion\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="Fashion\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\.travis.yml" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\bower.json" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\manual.md" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\README.md" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\hammer.js\README.md" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\LICENSE" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\package.json" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,9 +115,156 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Content Include="Fashion\About.html" />
+    <Content Include="Fashion\Contact.html" />
+    <Content Include="Fashion\css\bootstrap-theme.css" />
+    <Content Include="Fashion\css\bootstrap.min.css" />
+    <Content Include="Fashion\css\contact.css" />
+    <Content Include="Fashion\css\detail.css" />
+    <Content Include="Fashion\css\feedback.css" />
+    <Content Include="Fashion\css\home.css" />
+    <Content Include="Fashion\css\Productmale.css" />
+    <Content Include="Fashion\css\style.css" />
+    <Content Include="Fashion\css\template.css" />
+    <Content Include="Fashion\Detail.html" />
+    <Content Include="Fashion\Feedback.html" />
+    <Content Include="Fashion\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Fashion\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Fashion\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Fashion\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Fashion\Gallery.html" />
+    <Content Include="Fashion\Home.html" />
+    <Content Include="Fashion\img\anh1.jpg" />
+    <Content Include="Fashion\img\bag-ladies.jpg" />
+    <Content Include="Fashion\img\bag1.jpg" />
+    <Content Include="Fashion\img\bag2.jpg" />
+    <Content Include="Fashion\img\bag3.jpg" />
+    <Content Include="Fashion\img\bag4.jpg" />
+    <Content Include="Fashion\img\bag5.jpg" />
+    <Content Include="Fashion\img\bag6.jpg" />
+    <Content Include="Fashion\img\bag7.jpeg" />
+    <Content Include="Fashion\img\bag8.jpg" />
+    <Content Include="Fashion\img\bag9.jpeg" />
+    <Content Include="Fashion\img\bagbaglogo.png" />
+    <Content Include="Fashion\img\banner.jpg" />
+    <Content Include="Fashion\img\brandlist1.jpg" />
+    <Content Include="Fashion\img\brandlist2.png" />
+    <Content Include="Fashion\img\brandlist3.jpg" />
+    <Content Include="Fashion\img\brandlist4.jpg" />
+    <Content Include="Fashion\img\brandlist5.jpg" />
+    <Content Include="Fashion\img\color.png" />
+    <Content Include="Fashion\img\cropted.png" />
+    <Content Include="Fashion\img\detail.jpg" />
+    <Content Include="Fashion\img\dribbble_adidas.gif" />
+    <Content Include="Fashion\img\dribbble_adidas_fixed.gif" />
+    <Content Include="Fashion\img\home.png" />
+    <Content Include="Fashion\img\img1.jpg" />
+    <Content Include="Fashion\img\logo1.png" />
+    <Content Include="Fashion\img\slider1.jpg" />
+    <Content Include="Fashion\img\slider2.jpg" />
+    <Content Include="Fashion\img\slider3.jpg" />
+    <Content Include="Fashion\js\bootstrap.min.js" />
+    <Content Include="Fashion\js\detail.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\dist\xzoom.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\dist\xzoom.min.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\css\foundation.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\css\manual.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\css\normalize.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\css\prism.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\original\01_b_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\original\02_o_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\original\03_r_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\original\04_g_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\preview\01_b_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\preview\02_o_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\preview\03_r_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\preview\04_g_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\thumbs\01_b_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\thumbs\02_o_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\thumbs\03_r_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\gallery\thumbs\04_g_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\images\logo.png" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\foundation.min.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\foundation\foundation.dropdown.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\foundation\foundation.interchange.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\foundation\foundation.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\foundation\foundation.reveal.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\vendor\fastclick.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\vendor\jquery.cookie.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\vendor\jquery.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\vendor\modernizr.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\vendor\placeholder.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\js\vendor\prism.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\doc\manual.html" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\css\demo.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\css\foundation.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\css\normalize.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\css\xzoom.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\blank.gif" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\fancybox_loading%402x.gif" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\fancybox_loading.gif" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\fancybox_overlay.png" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\fancybox_sprite%402x.png" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\fancybox_sprite.png" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\jquery.fancybox.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\jquery.fancybox.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\hammer.js\1.0.5\hammer.min.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\hammer.js\1.0.5\jquery.hammer.min.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\original\01_b_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\original\02_o_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\original\03_r_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\original\04_g_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\preview\01_b_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\preview\02_o_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\preview\03_r_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\preview\04_g_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\thumbs\01_b_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\thumbs\02_o_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\thumbs\03_r_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\gallery\thumbs\04_g_car.jpg" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\logo.png" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\images\xloading.gif" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\index.html" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\foundation.min.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\foundation\foundation.dropdown.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\foundation\foundation.interchange.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\foundation\foundation.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\foundation\foundation.reveal.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\setup.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\vendor\fastclick.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\vendor\jquery.cookie.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\vendor\jquery.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\vendor\modernizr.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\js\vendor\placeholder.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\magnific-popup\css\magnific-popup.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\example\magnific-popup\js\magnific-popup.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\gulpfile.js" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\index.html" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\src\xzoom.css" />
+    <Content Include="Fashion\js\Feature-rich-Product-Gallery-With-Image-Zoom-xZoom\src\xzoom.js" />
+    <Content Include="Fashion\js\home.js" />
+    <Content Include="Fashion\js\jquery-3.2.1.min.js" />
+    <Content Include="Fashion\js\login.js" />
+    <Content Include="Fashion\js\OWL-carolsell\owl.carousel.css" />
+    <Content Include="Fashion\js\OWL-carolsell\owl.carousel.js" />
+    <Content Include="Fashion\js\OWL-carolsell\owl.carousel.min.js" />
+    <Content Include="Fashion\js\OWL-carolsell\owl.theme.css" />
+    <Content Include="Fashion\js\OWL-carolsell\owl.transitions.css" />
+    <Content Include="Fashion\Login.html" />
+    <Content Include="Fashion\Order.html" />
+    <Content Include="Fashion\ProductFemale.html" />
+    <Content Include="Fashion\ProductMale.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -216,7 +279,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61804</DevelopmentServerPort>
+          <DevelopmentServerPort>52920</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:61804/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
