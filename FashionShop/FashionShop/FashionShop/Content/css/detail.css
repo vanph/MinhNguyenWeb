@@ -1,0 +1,192 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*styling for breadcumb */
+	.list-inline li a {
+		font-size: 11px;
+		color:#999;
+	}
+	
+	.list-inline {
+		margin-top: 90px;
+		padding-bottom: 10px;
+    	border-bottom: 1px solid;	
+	}
+
+
+.pd-preview {
+	margin-top: 80px;
+}
+	
+.pd-preview .xzoom {
+	float:right;
+	width: 80%;
+	display:block
+		
+}
+ .thumbslist {
+	float:right;
+	width: 30%;
+	display: block;
+	border: 1px solid #000;
+ }	
+.thumbslist ul {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+.thumbslist ul li img {
+	height: 60px;
+	width: 60px;
+}
+
+#product-information {
+	margin-top: 80px;
+	
+	
+}
+.break {
+	clear:both;
+	height:1px;
+}
+
+/* img list */
+
+#owl-demo2 .img-list{
+  margin: 3px;
+}
+#owl-demo2 .img-list img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*Styling right block */
+#product-information h4 {
+	font-weight: bold;
+    font-size: 17px;
+	letter-spacing: 1px;	
+	text-transform: uppercase;
+}
+
+#prd-id {
+	font-size: 11px;
+	margin-top: -10px;
+	color:#999;	
+	text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#pr-price {
+	font-weight: bold;
+    font-size: 19px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.prd-color {
+	padding-left: 0px;	
+}
+.prd-color li .cl-name {
+	font-size: 13px;
+	font-weight:bold;
+	padding-left: 0px;
+}
+
+#cl-item1 {
+	width: 30px;
+	margin-right: 5px;
+	border: 1px solid #000;	
+}
+
+
+/* Styling color list */
+.color-list {
+	list-style: none;
+	padding-left: 0px;
+}
+.color-list li {
+	display: inline-block;
+	
+	
+}
+.color-list #cl-item1, #cl-item2 {
+	border: 1px solid;
+	width: 30px;
+	margin-right: 1px;	
+}
+/*Styling for size list	*/
+.prd-size {
+	margin-top:10px;
+	list-style: none;
+	padding-left: 0px;
+	
+}
+.size-naming {
+	font-size: 13px;
+    font-weight: bold;
+}
+/* Styling for quatity */
+.prd-value {
+	margin-top: 10px;
+	margin-bottom: 40px;
+}
+.prd-value span {
+	font-size: 13px;
+    font-weight: bold;
+}
+.prd-value input {
+	width: 20px;
+}
+/* styling for buying button */
+#buyItem {
+	width: 50%;
+	background: none;
+    padding: 8px 20px 8px 20px;
+    border: 2px solid #000;
+	font-weight: bold;
+	font-size: 13px;
+	letter-spacing: 1px;
+		
+}
+#detailBtn {
+	
+	margin-top: 10px;
+    width: 50%;
+    border-radius: 0px;
+    background: none;
+    color: #000;
+    border: 2px solid;
+	font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#detail-info {
+	padding-top: 15px;
+}
+/* */
+#sec-header {
+	padding-top: 30px;
+    border-top: 1px solid #999;
+	margin-top: 40px;
+	font-weight: bold;
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+/* responsive */
+@media (max-width:1024px) {
+	.xzoom {
+		width: 80%;
+	}
+}
+
+@media (max-width:1366px) {
+	.xzoom {
+		width: 80%;
+	}
+}

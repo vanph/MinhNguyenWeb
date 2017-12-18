@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*styling for breadcumb */
+	.list-inline li a {
+		font-size: 11px;
+		color:#999;
+		
+	}
+	
+	
+	iframe {
+		margin-bottom: 10px;	
+	}
+	.b-content1 {
+		margin-top: 90px;	
+	}
+	
+	.clear {
+		clear:both;
+	}
+	.contact-us {
+		
+		padding-top: 20px;
+    	padding-bottom: 70px;
+    	background: #3c3a3a;
+    	color: white;
+		font-weight: bold;
+
+	}
+	.contact-us h4 {
+		font-size: 30px;
+    	letter-spacing: 2px;
+    	text-align: center;
+    	margin-bottom: 50px;
+    	font-weight: bold;
+		
+			
+	}
+	/* Styling for Form */
+	.form-control, .btn {
+		border-radius: 0px;
+		
+	}
+	
