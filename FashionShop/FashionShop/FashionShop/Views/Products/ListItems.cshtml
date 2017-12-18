@@ -1,0 +1,10 @@
+﻿@model List<FashionShop.ViewModels.ProductItem>
+
+<div class="col-md-9 ">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 col-xs-12">
+            @{Html.RenderPartial("Item",item);}
+        </div>
+    }
+</div>
