@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataAccess;
 using FashionShop.ViewModels;
 
 namespace FashionShop.Controllers
@@ -10,73 +11,43 @@ namespace FashionShop.Controllers
     public class ProductsController : Controller
     {
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(string productType)
         {
-            var model = new ProductListViewModel();
-
-            model.ProductType = "Women";
-            model.ProductItems = GetProducts();
+            var model = new ProductListViewModel
+            {
+                ProductType = productType,
+                ProductItems = GetProducts(productType)
+            };
 
             return View(model);
         }
 
-        private List<ProductItem> GetProducts()
+        private List<ProductItem> GetProducts(string productType)
         {
-            var products = new List<ProductItem>()
+            using (var dbContext = new FashionShopEntities())
             {
-                new ProductItem()
+                var productItems = dbContext.Products.Where(x => x.ProductType.Name.Equals(productType)).Select(x => new ProductItem()
                 {
-                    Title ="Black Shoulder Bag 1xxx123",
-                    ImageSrc = @"/Content/img/anh1.jpg",
-                    Price = 10.0m,
-                    DetailLink = ""
-                },
-                new ProductItem()
+                    Name = x.Name,
+                    Price = x.Price,
+                    ImageSrc = x.Image,
+                    Code = x.Code
+                }).ToList();
+
+                foreach (var item in productItems)
                 {
-                    Title ="Black ",
-                    ImageSrc = @"/Content/img/anh1.jpg",
-                    Price = 20.0m,
-                    DetailLink = ""
-                },
-                new ProductItem()
-                {
-                    Title ="Bag ",
-                    ImageSrc = @"/Content/img/anh1.jpg",
-                    Price = 134.0m,
-                    DetailLink = ""
-                },
-                new ProductItem()
-                {
-                    Title ="Copytox",
-                    ImageSrc = @"/Content/img/anh1.jpg",
-                    Price =50.0m,
-                    DetailLink = ""
-                },
-                new ProductItem()
-                {
-                    Title ="Fashion",
-                    ImageSrc = @"/Content/img/anh1.jpg",
-                    Price = 54.0m,
-                    DetailLink = ""
-                }
-                ,new ProductItem()
-                {
-                    Title ="KEnzo",
-                    ImageSrc = @"/Content/img/anh1.jpg",
-                    Price = 20.0m,
-                    DetailLink = ""
-                },
-                new ProductItem()
-                {
-                    Title ="Crown",
-                    ImageSrc = @"/Content/img/anh1.jpg",
-                    Price = 30m,
-                    DetailLink = ""
+                    item.DetailLink = BuildDetailLink(item.Code);
                 }
 
-            };
+                return productItems;
+            }
 
-            return products;
         }
+
+        private string BuildDetailLink(string code)
+        {
+            return $"/ProductDetail?productCode={code}";
+        }
+
     }
 }

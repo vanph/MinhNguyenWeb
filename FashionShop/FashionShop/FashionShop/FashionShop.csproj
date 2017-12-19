@@ -149,11 +149,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeMenuController.cs" />
+    <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ProductDetailViewModel.cs" />
     <Compile Include="ViewModels\ProductItem.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
   </ItemGroup>
@@ -380,6 +382,7 @@
     <Content Include="Views\Products\LeftMenu.cshtml" />
     <Content Include="Views\Products\ListItems.cshtml" />
     <Content Include="Views\Products\Item.cshtml" />
+    <Content Include="Views\ProductDetail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
