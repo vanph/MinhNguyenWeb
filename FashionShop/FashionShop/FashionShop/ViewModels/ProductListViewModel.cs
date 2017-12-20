@@ -15,5 +15,8 @@ namespace FashionShop.ViewModels
         {
             ProductItems = new List<ProductItem>();
         }
+
+
+    
     }
 }

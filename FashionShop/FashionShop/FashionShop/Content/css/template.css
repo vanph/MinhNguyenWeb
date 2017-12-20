@@ -2,19 +2,17 @@
 /* CSS Document */
 
 /*Styling for header */
-	
-	.navbar {
-
-		border-radius: 0px;
-	
-		z-index: 999;
-		background-color: rgba(255, 255, 255, 1);
-		border: 0px;
-		margin-bottom: 0px;
-		box-shadow: 0 2px 3px 0 rgba(0,0,0,0.3);
-	
-		
-	}
+.image1 {
+    background: url(/Content/img/cropted.png)
+}
+.navbar {
+    border-radius: 0px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 1);
+    border: 0px;
+    margin-bottom: 0px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.3);
+}
 
 	.nav_right{
 		margin-right: 18%;
