@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DataAccess.Size>
+
+@{
+    ViewBag.Title = "Sizes";
+}
+
+<h2>Sizes</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SizeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizeName)
+        </td>
+       
+    </tr>
+}
+
+</table>
