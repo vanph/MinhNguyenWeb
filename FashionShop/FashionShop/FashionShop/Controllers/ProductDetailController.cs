@@ -19,13 +19,28 @@ namespace FashionShop.Controllers
             
             var product = dbContext.Products.FirstOrDefault(x=> x.Code.Equals(productCode));
 
-            if (product != null)
+            if (product != null && product.ProductVariants.Count> 0)
             {
+                var productVariantViewModels = product.ProductVariants.Select(x => new ProductVariantViewModel
+                {
+                    ProductVariantId = x.ProductVariantId,
+                    ProductId = x.ProductId,
+                    VariantCode = x.Code,
+                    SizeId = x.SizeId,
+                    Size = x.Size.SizeName,
+                    ColorId = x.ColorId,
+                    Color = x.Color != null ? x.Color.ColorName : string.Empty,
+                    QuantityInStock = x.Quantity
+                }).ToList();
+
                 model = new ProductDetailViewModel
                 {
                     Name = product.Name,
                     Price = product.Price,
-                    ImageSrc = product.Image
+                    ImageSrc = product.Image,
+                    Content = product.Content,
+                    Code = product.Code,
+                    Variants = productVariantViewModels
                 };
                 
             }

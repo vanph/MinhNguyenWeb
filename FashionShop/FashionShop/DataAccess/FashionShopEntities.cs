@@ -13,6 +13,8 @@ namespace DataAccess
         }
 
         public virtual DbSet<Color> Colors { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<ProductVariant> ProductVariants { get; set; }
@@ -20,6 +22,10 @@ namespace DataAccess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<OrderDetail>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
+
             modelBuilder.Entity<Product>()
                 .Property(e => e.Price)
                 .HasPrecision(18, 0);

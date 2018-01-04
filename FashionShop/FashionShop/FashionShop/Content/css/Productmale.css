@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 .uniad-banner-image {
 	margin-left: 20px;	
@@ -93,14 +93,13 @@ a {
 .style ul li{
 	 list-style: none;
     text-decoration: none;
-	}
-
-	
+	}	
 .pr-d a{
-		border: 3px solid #d3d3d4;
-		color: #d3d3d4;
-		font-size: 20px;
-		display: inline-block;
+    border: 3px solid #d3d3d4;
+    color: black;
+    font-size: 20px;
+    background: #d3d3d4;
+    display: inline-block;
 		padding: 3px 15px;
 		text-decoration: none;
 		border-radius: 3px;

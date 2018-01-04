@@ -17,7 +17,16 @@ namespace FashionShop
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+            namespaces: new[] { "FashionShop.Controllers" }
+
+
+            );
+            routes.MapRoute(
+                name: "Add Cart",
+                url: "them-gio-hang",
+                defaults: new { controller = "Cart", action = "AddItem", id = UrlParameter.Optional },
                 namespaces: new[] { "FashionShop.Controllers" }
+
 
             );
         }

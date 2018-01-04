@@ -12,6 +12,9 @@ namespace DataAccess
 
         public int ProductId { get; set; }
 
+        [StringLength(50)]
+        public string Code { get; set; }
+
         public int SizeId { get; set; }
 
         public int? ColorId { get; set; }

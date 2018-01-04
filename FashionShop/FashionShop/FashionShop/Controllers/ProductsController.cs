@@ -18,7 +18,7 @@ namespace FashionShop.Controllers
                 ProductType = productType,
                 ProductItems = GetProducts(productType)
             };
-
+            ViewBag.term = productType;
             return View(model);
         }
 

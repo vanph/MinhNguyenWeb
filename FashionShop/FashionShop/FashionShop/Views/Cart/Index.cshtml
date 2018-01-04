@@ -1,0 +1,85 @@
+﻿@model FashionShop.ViewModels.CartViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="container">
+    <img src="/Content/img/img1.jpg" width="1170" height="600" />
+</div>
+<div class="container" id="shopping-cart">
+    <div class="row no-gutters">
+        <div class="col-md-8 col-sm-8 col-xs-12 border-right">
+            <div class="text-center">
+                <p class="cart-title">YOUR SHOPPING CART</p>
+            </div>
+            <table class="table table-responsive order-detail">
+                <thead>
+                <tr>
+                    <th class="text-center">Image</th>
+                    <th class="text-center">Product Name</th>
+                    <th class="text-center">Color</th>
+                    <th class="text-center">Unit Price</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">Total</th>
+                    <th class="text-center">Remove</th>
+                </tr>
+                </thead>
+                <tbody class="text-center">
+                @foreach (var item in Model.CartItems) { 
+                <tr>
+                        <td><img src="@item.ImageSrc" alt="" class="product-thumbnail"></td>
+                        <td> <p>@item.ProductName</p></td>
+                        <td> <p > @item.Color</p></td>
+                        <td class="unit-price"> <p>@item.Price   </p></td>
+                        <td> @item.Quantity</td>
+                        <td > <p>@item.Money </p></td>
+                        <td> <p><i class="fa fa-remove btn-sm"></i> </p></td>
+                        
+         
+                   
+                </tr>
+                }
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12" id="cart-summary-container">
+            <table class="table table-responsive" id="cart-summary">
+                <thead>
+                <tr>
+                    <th class="text-center" colspan="2">SUMMARY</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Total quantity</td>
+                    <td class="text-right">2</td>
+                </tr>
+                <tr>
+                    <td>Total payment</td>
+                    <td class="text-right">1.300.000</td>
+                </tr>
+                </tbody>
+            </table>
+            <p class="text-center text-thin">The shipping will be free of charge if your total payment exceeds 3.000.000</p>
+            <div class="button-group">
+                <div>
+                    <button class="btn cart-button-continue">CONTINUE SHOPPING</button>
+                    <button class="btn cart-button-checkout" id="cart-checkout">CHECK OUT</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+        $(function(){
+            $("#cart-checkout").click(function() {
+                toastr["success"]("Added successfully!", "Add to cart");
+            });
+         });
+</script>
+

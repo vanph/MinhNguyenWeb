@@ -1,5 +1,9 @@
 ﻿@model FashionShop.ViewModels.ProductDetailViewModel
 
+@{
+
+    var addToCartUrl = Url.Action("AddToCart","Cart");
+}
 <div class="container">
     <img src="/Content/img/img1.jpg" width="1170" height="600" />
 </div>
@@ -27,59 +31,72 @@
                 <!-- Block product detail and price -->
                 <div id="product-information" class="col-md-5 col-sm-5 col-xs-12">
                     <h4>@Model.Name</h4>
-                    <p id="prd-id">Code: </p>
-                    <p id="pr-price">@Model.Price VND</p>
-                    <ul class="prd-color">
-                        <li>
-                            <span class="cl-name">Color :</span>
-                        </li>
-                        <li>
-                            <ul class="color-list">
-                                <li><img src="/Content/img/color.png" id="cl-item1"/></li>
-                                <li><img src="/Content/img/color.png" id="cl-item2"/></li>
+                    <p id="prd-id">Code: @Model.Code </p>
+                    <p id ="product-detail-variant-code" variant-code="@(Model.DefaultVariant != null ? Model.DefaultVariant.VariantCode : string.Empty)" >Variant Code: @(Model.DefaultVariant != null ? Model.DefaultVariant.VariantCode : string.Empty) </p>
+                    <p id="pr-price">Giá :@Model.Price VND</p>
+                    
+                   
+                        @if (Model.AvailableColors.Count > 0)
+                        {
+                            <ul class="prd-color">
+                                    @foreach (var color in Model.AvailableColors)
+                                    {
+                                        <li>
+                                            <span class="cl-name">Color : @color</span>
+                                        </li>
+                                    }
+                              
+                               
                             </ul>
-                        </li>
-                    </ul>
+                        }
+                    
+
                     <ul class="prd-size">
                         <li>
                             <span class="size-naming">Size :</span>
                         </li>
                         <li>
-                            <select name="sizelist">
+                            <select name="sizelist "  id="pr-size">
+                                @{
+                                    foreach (var size in Model.AvailableSizes)
+                                    {
+                                        <option value="@if (Model.DefaultVariant != null)
+                                                       {
+                                                           @Model.DefaultVariant.SizeId
+                                                       }">@size</option>
+                                    }
+                                }
+                            </select>
+
+                            
+                            @*<select name="sizelist">
                                 <option value="small">Small </option>
                                 <option value="medium">Medium</option>
                                 <option value="large">Large</option>
-                            </select>
+                            </select>*@
                         </li>
                     </ul>
 
                     <p class="prd-value">
-                        <span>Quantity :</span>
-                        <input type="text" value="1" size="1"/>
+                        <span>Quantity : </span>
+                        <input type="text" value="1" id ="product-detail-quantity" size="1"/>
                     </p>
-                    <button id="buyItem" type="button" size="2" onclick="BuyProduct()">
-
-
-                        ADD TO YOUR CART
-
-                    </button>
+                    <a href="javascript:void(0)" id="add-to-cart"> Add Cart</a>
+                    <div style="width: 300px">
+                     
+                    </div>
+                  
+                  
                     <button id="detailBtn" type="button" class="btn btn-info" data-toggle="collapse" data-target="#detail-info">Detail</button>
                     <br/>
                     <!--- --->
 
                     <div id="detail-info" class="collapse">
-                        <p>Cặp xách Mars phù hợp cho các bạn đi làm công sở. Với thiết kế gọn nhưng đầy đủ các ngăn tính năng.</p>
-                        <ul>
-                            <li>Có ngăn đựng được Laptop 15" với chức năng giảm sốc 3 mặt</li>
-                            <li>Thiết kế Cặp xách kết hợp với đeo chéo tháo rời tiện lợi khi đi lại nhiều.</li>
-                            <li>Đựng được các giấy tờ, tài liệu cỡ giấy A4.</li>
-                            <li>Kích thước: Ngang: 43cm - Cao 31 cm, - Hông 7,5 cm</li>
-                        </ul>
-                        <p>Chất liệu da tổng hợp cao cấp, không nổ da, không bong tróc (trừ khi bị ma sát quá nhiều hoặc bị lực tác động mạnh sẽ bị mòn hoặc xước da). Bề mặt da chống
-                            chống thấm nước. Dễ dàng được vệ sinh với xà phòng và nước. Có khả năng chịu được môi trường thời tiết khắc nghiệt.</p>
+                        <p> @Model.Content </p>
+                        
                     </div>
 
-
+                 
                     <!-- -->
 
 
@@ -95,4 +112,36 @@
         </div>
     }
 
-</div>      
+</div>     
+<script>
+    $(function() {
+        $("#add-to-cart").click(function() {
+
+            var variation = { variantCode: $("#product-detail-variant-code").attr("variant-code"), quantity: $("#product-detail-quantity").val() };
+            //var variation = { variantCode: "aaaaa", quantity: $("#product-detail-quantity").val() };
+
+            $.ajax({
+                url: "@addToCartUrl",
+                type: "POST",
+                data: JSON.stringify(variation),
+                contentType: "application/json; charset=utf-8",
+                success: function(response) {
+                    $("#global-cart-total-count").text("Cart " + (response.TotalQuantity)+ "-"+ response.TotalMoney),
+                        toastr["success"]("Successfully added product!", "Add to cart");
+                },
+                failure: function(response) {
+                    toastr["Error"]("Fail added product!", "Add to cart");
+                },
+                error: function(response) {
+                    toastr["Error"]("Fail added product!", "Add to cart");
+                }
+            });
+        });
+    });
+
+       
+
+   
+
+
+</script> 
