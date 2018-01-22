@@ -6,21 +6,26 @@ namespace DataAccess
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("OrderDetail")]
-    public partial class OrderDetail
+    public partial class User
     {
-        public Guid OrderDetailId { get; set; }
+        public Guid UserId { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SeqId { get; set; }
 
-        public Guid OrderId { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string UserName { get; set; }
 
-        public int ProductVariantId { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string EmailAddress { get; set; }
 
-        public int Quantity { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Password { get; set; }
 
-        public decimal UnitPrice { get; set; }
+        public int UserTypeId { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
@@ -34,8 +39,8 @@ namespace DataAccess
         [StringLength(50)]
         public string ModifiedBy { get; set; }
 
-        public virtual Order Order { get; set; }
+        public virtual Customer Customer { get; set; }
 
-        public virtual ProductVariant ProductVariant { get; set; }
+        public virtual UserType UserType { get; set; }
     }
 }

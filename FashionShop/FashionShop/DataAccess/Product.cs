@@ -36,9 +36,21 @@ namespace DataAccess
 
         public int Quantity { get; set; }
 
-        public bool? IsActive { get; set; }
+        public bool IsActive { get; set; }
 
         public string Content { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string CreatedBy { get; set; }
+
+        public DateTime ModifiedDate { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string ModifiedBy { get; set; }
 
         public virtual ProductType ProductType { get; set; }
 

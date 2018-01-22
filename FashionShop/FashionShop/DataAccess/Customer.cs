@@ -6,26 +6,32 @@ namespace DataAccess
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class ProductVariant
+    public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProductVariant()
+        public Customer()
         {
-            OrderDetails = new HashSet<OrderDetail>();
+            Orders = new HashSet<Order>();
         }
 
-        public int ProductVariantId { get; set; }
+        public Guid CustomerId { get; set; }
 
-        public int ProductId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Seqid { get; set; }
 
         [StringLength(50)]
-        public string Code { get; set; }
+        public string CustomerName { get; set; }
 
-        public int SizeId { get; set; }
+        public int? Phone { get; set; }
 
-        public int? ColorId { get; set; }
+        [StringLength(250)]
+        public string LineAddress { get; set; }
 
-        public int Quantity { get; set; }
+        [StringLength(50)]
+        public string District { get; set; }
+
+        [StringLength(50)]
+        public string City { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
@@ -39,13 +45,9 @@ namespace DataAccess
         [StringLength(50)]
         public string ModifiedBy { get; set; }
 
-        public virtual Color Color { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
 
-        public virtual Product Product { get; set; }
-
-        public virtual Size Size { get; set; }
+        public virtual User User { get; set; }
     }
 }
