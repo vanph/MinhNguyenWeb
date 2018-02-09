@@ -28,6 +28,7 @@ namespace FashionShop.Controllers
             {
                 var productItems = dbContext.Products.Where(x => x.ProductType.Name.Equals(productType)).Select(x => new ProductItem()
                 {
+                    
                     Name = x.Name,
                     Price = x.Price,
                     ImageSrc = x.Image,

@@ -8,47 +8,40 @@
 
 
 <div class="container">
-    <img src="/Content/img/img1.jpg" width="1170" height="600"/>
+    <img src="/Content/img/img1.jpg" width="1170" height="600" />
 </div>
-
 
 <!-- Section 2 -->
 <div class=" container">
     <span>
         <a href="home.html"><img src="/Content/img/home.png" class="img-m1" /></a>
     </span>
-    <span > @Model.ProductType</span>
+
 </div>
 
 <div class="container">
     <div class="row f1">
-        <div class="col-md-4">
-           
+        <div class="col-md-8">
+
             <h4 class="Name">@Model.ProductType</h4>
         </div>
-        
-        <div class="col-md-4">
-            <input type="checkbox" class="check" value="1" name="promt">  
-            <span class="sale">SALES</span> 
-        </div>
-        
-        
+
         <div class="col-md-2">
             <input type="hidden" name="type" value="">
-            <div class="filter-price">   
-             
+            <div class="filter-price">
+
                 <select class="input form-control" name="order" id="order">
                     <option value="#">-- Order --</option>
                     <option value="#">New Products</option>
-                    <option value="#" >From Low To High</option>
-                    <option value="#" >From High To Low</option>
-                </select>   
+                    <option value="#">From Low To High</option>
+                    <option value="#">From High To Low</option>
+                </select>
             </div>
         </div>
         <div class="col-md-2">
             <input type="submit" class="btn btn inverse" value="Check" id="check">
         </div>
-  
+
     </div>
     <div class="row content1 ">
 
@@ -59,9 +52,9 @@
         @{ Html.RenderPartial("ListItems", Model.ProductItems);}
 
 
-      
-     
-  
+
+
+
     </div>
 
 

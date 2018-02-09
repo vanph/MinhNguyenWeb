@@ -2,7 +2,7 @@
 
 @{
 
-    var addToCartUrl = Url.Action("AddToCart","Cart");
+    var addToCartUrl = Url.Action("AddToCart", "Cart");
 }
 <div class="container">
     <img src="/Content/img/img1.jpg" width="1170" height="600" />
@@ -11,7 +11,7 @@
 
 
 <div class=" b-body container">
-    
+
     @if (Model != null)
     {
 
@@ -22,7 +22,7 @@
                 <!--Block Product image -->
                 <div id="product-preview" class="col-md-7 col-sm-7 col-xs-12">
                     <div class="pd-preview">
-                        <img class="xzoom" src=@Model.ImageSrc xoriginal="img/anh1.jpg"/>
+                        <img class="xzoom" src=@Model.ImageSrc xoriginal="img/anh1.jpg" />
 
                     </div>
 
@@ -32,71 +32,73 @@
                 <div id="product-information" class="col-md-5 col-sm-5 col-xs-12">
                     <h4>@Model.Name</h4>
                     <p id="prd-id">Code: @Model.Code </p>
-                    <p id ="product-detail-variant-code" variant-code="@(Model.DefaultVariant != null ? Model.DefaultVariant.VariantCode : string.Empty)" >Variant Code: @(Model.DefaultVariant != null ? Model.DefaultVariant.VariantCode : string.Empty) </p>
+                    <p id="product-detail-variant-code" variant-code="@(Model.DefaultVariant != null ? Model.DefaultVariant.VariantCode : string.Empty)">Variant Code: @(Model.DefaultVariant != null ? Model.DefaultVariant.VariantCode : string.Empty) </p>
                     <p id="pr-price">Giá :@Model.Price VND</p>
-                    
-                   
-                        @if (Model.AvailableColors.Count > 0)
-                        {
-                            <ul class="prd-color">
-                                    @foreach (var color in Model.AvailableColors)
-                                    {
-                                        <li>
-                                            <span class="cl-name">Color : @color</span>
-                                        </li>
-                                    }
-                              
-                               
-                            </ul>
-                        }
-                    
+
+
+                    @if (Model.AvailableColors.Count > 0)
+                    {
+                        <ul class="prd-color">
+                            @foreach (var color in Model.AvailableColors)
+                            {
+                                <li>
+                                    <span class="cl-name">Color : @color</span>
+                                </li>
+                            }
+
+
+                        </ul>
+                    }
+
 
                     <ul class="prd-size">
                         <li>
                             <span class="size-naming">Size :</span>
                         </li>
                         <li>
-                            <select name="sizelist "  id="pr-size">
+                            <select name="sizelist " id="pr-size">
                                 @{
                                     foreach (var size in Model.AvailableSizes)
                                     {
                                         <option value="@if (Model.DefaultVariant != null)
                                                        {
                                                            @Model.DefaultVariant.SizeId
-                                                       }">@size</option>
+                                                       }">
+                                            @size
+                                        </option>
                                     }
                                 }
                             </select>
 
-                            
+
                             @*<select name="sizelist">
-                                <option value="small">Small </option>
-                                <option value="medium">Medium</option>
-                                <option value="large">Large</option>
-                            </select>*@
+                                    <option value="small">Small </option>
+                                    <option value="medium">Medium</option>
+                                    <option value="large">Large</option>
+                                </select>*@
                         </li>
                     </ul>
 
                     <p class="prd-value">
                         <span>Quantity : </span>
-                        <input type="text" value="1" id ="product-detail-quantity" size="1"/>
+                        <input type="text" value="1" id="product-detail-quantity" size="1" />
                     </p>
-                    <a href="javascript:void(0)" id="add-to-cart"> Add Cart</a>
+                    <button><a href="javascript:void(0)" id="add-to-cart"> Add Cart</a></button>
                     <div style="width: 300px">
-                     
+
                     </div>
-                  
-                  
+
+
                     <button id="detailBtn" type="button" class="btn btn-info" data-toggle="collapse" data-target="#detail-info">Detail</button>
-                    <br/>
+                    <br />
                     <!--- --->
 
                     <div id="detail-info" class="collapse">
                         <p> @Model.Content </p>
-                        
+
                     </div>
 
-                 
+
                     <!-- -->
 
 
@@ -104,15 +106,15 @@
             </div>
         </div>
 
-    }
-    else
-    {
-        <div>
-            Cannot found the product.
-        </div>
-    }
+                                    }
+                                    else
+                                    {
+                                        <div>
+                                            Cannot found the product.
+                                        </div>
+                                    }
 
-</div>     
+</div>
 <script>
     $(function() {
         $("#add-to-cart").click(function() {
@@ -138,10 +140,5 @@
             });
         });
     });
-
-       
-
-   
-
 
 </script> 

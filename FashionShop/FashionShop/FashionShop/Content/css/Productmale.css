@@ -23,18 +23,6 @@ body{
 .top{
 	border-bottom: 1px solid black;
 	}
-.box{
-
-	
-	}
-#order{
-
-	}
-#check{  
-		}	
-	
-
-
 .list-menu-box ul {
   padding-left: 0%;
 }
@@ -74,10 +62,7 @@ a {
     text-decoration: none !important;
     display: block;
 }
-.list-menu-box li a:hover {
-	background-color:#ff5400;
-	color: #fff;
-}
+
 .style{
 	border-bottom: 1px solid #999;
 	}
