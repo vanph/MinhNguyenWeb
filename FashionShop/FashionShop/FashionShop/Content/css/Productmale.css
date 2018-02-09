@@ -23,6 +23,18 @@ body{
 .top{
 	border-bottom: 1px solid black;
 	}
+.box{
+
+	
+	}
+#order{
+
+	}
+#check{  
+		}	
+	
+
+
 .list-menu-box ul {
   padding-left: 0%;
 }
@@ -39,46 +51,34 @@ body{
 
 .list-menu-box a, .list-menu-box span {
     padding: 10px;
-    color: #333;
     font-size: 16px;
 }
-
+.sap-xep a {
+    color: #333;
+  
+}
 .title-list {
     font-size: 17px !important;
-    border-bottom: 1px solid black;
-
+    coler: #fff;
+    background-color: #808080;
 }
 
 .list-menu-box li {
     list-style-type: disc;
     margin-left: 30px;
 }
-.list-menu-box a, .list-menu-box span {
-    padding: 10px;
-    color: #333;
-    font-size: 16px;
+.menu-box span {
+    color: #fff;
 }
 a {
     text-decoration: none !important;
     display: block;
 }
+.list-menu-box li a:hover {
+    color: rgb(236, 0, 140);
+  
+}
 
-.style{
-	border-bottom: 1px solid #999;
-	}
-.style h2{
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-	font-size:20px;
-	}
-.style ul li a{
-	   text-decoration: none;
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-		font-size:18px;
-	}
-.style ul li{
-	 list-style: none;
-    text-decoration: none;
-	}	
 .pr-d a{
     border: 3px solid #d3d3d4;
     color: black;
@@ -227,3 +227,9 @@ a {
 .content1{
 	padding-top: 2%;
 }
+.pr-title a {
+    color: #333333;
+}
+    .pr-title a:hover {
+        color: rgb(236, 0, 140);
+    }

@@ -4,7 +4,7 @@
 
     var addToCartUrl = Url.Action("AddToCart", "Cart");
 }
-<div class="container">
+<div class="container pr-detail" style=" border-bottom: solid;">
     <img src="/Content/img/img1.jpg" width="1170" height="600" />
 </div>
 
@@ -31,7 +31,7 @@
                 <!-- Block product detail and price -->
                 <div id="product-information" class="col-md-5 col-sm-5 col-xs-12">
                     <h4>@Model.Name</h4>
-                    <p id="prd-id">Code: @Model.Code </p>
+                   @*// <p id="prd-id">Code: @Model.Code </p>*@
                     <p id="product-detail-variant-code" variant-code="@(Model.DefaultVariant != null ? Model.DefaultVariant.VariantCode : string.Empty)">Variant Code: @(Model.DefaultVariant != null ? Model.DefaultVariant.VariantCode : string.Empty) </p>
                     <p id="pr-price">Giá :@Model.Price VND</p>
 
@@ -46,10 +46,8 @@
                                 </li>
                             }
 
-
                         </ul>
                     }
-
 
                     <ul class="prd-size">
                         <li>
@@ -70,7 +68,6 @@
                                 }
                             </select>
 
-
                             @*<select name="sizelist">
                                     <option value="small">Small </option>
                                     <option value="medium">Medium</option>
@@ -89,14 +86,10 @@
                     </div>
 
 
-                    <button id="detailBtn" type="button" class="btn btn-info" data-toggle="collapse" data-target="#detail-info">Detail</button>
-                    <br />
-                    <!--- --->
-
-                    <div id="detail-info" class="collapse">
+                   
                         <p> @Model.Content </p>
 
-                    </div>
+               
 
 
                     <!-- -->

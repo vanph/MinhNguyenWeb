@@ -54,12 +54,11 @@
 	}
 	
 /*Styling for footer */
-	.footer-bl {
-		border-top: 1px solid #000;
-		margin-top: 20px;
-		background: #1e1e1e;
-		color: #eee;
-	}
+.footer-bl {
+    margin-top: 20px;
+    background-color: #f3b8ca;
+    color: #eee;
+}
 	.Footer {
 		padding-top: 30px;
 		padding-bottom: 25px;
@@ -115,4 +114,11 @@
 		}
 		
 	}
-	
+.Footer {
+    margin-top: 20px;
+    background-color: #f3b8ca;
+    color: #eee;
+}
+.pr-detail {
+    border-bottom: solid;
+}

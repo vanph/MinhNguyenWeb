@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /*styling for breadcumb */
@@ -152,7 +152,7 @@
 #detailBtn {
 	
 	margin-top: 10px;
-    width: 50%;
+
     border-radius: 0px;
     background: none;
     color: #000;

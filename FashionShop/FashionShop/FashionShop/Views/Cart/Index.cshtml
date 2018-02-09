@@ -4,14 +4,15 @@
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 
-<div class="container">
+<div class="container pr-detail" style=" border-bottom: solid; margin-bottom: 50px;">
     <img src="/Content/img/img1.jpg" width="1170" height="600" />
 </div>
+
 <div class="container" id="shopping-cart">
     <div class="row no-gutters">
         <div class="col-md-8 col-sm-8 col-xs-12 border-right">
             <div class="text-center">
-                <p class="cart-title">YOUR SHOPPING CART</p>
+                <p class="cart-title" style="font-weight: bold; margin-bottom: 20px;">YOUR SHOPPING CART</p>
             </div>
             <table class="table table-responsive order-detail">
                 <thead>
@@ -54,19 +55,25 @@
                 <tbody>
                 <tr>
                     <td>Total quantity</td>
-                    <td class="text-right">2</td>
+                    <td class="text-right"></td>
                 </tr>
                 <tr>
                     <td>Total payment</td>
-                    <td class="text-right">1.300.000</td>
+                    <td class="text-right"></td>
                 </tr>
                 </tbody>
             </table>
-            <p class="text-center text-thin">The shipping will be free of charge if your total payment exceeds 3.000.000</p>
+          
             <div class="button-group">
                 <div>
-                    <button class="btn cart-button-continue">CONTINUE SHOPPING</button>
+                    <div style="border: 0px solid #dddddd  ; display: inline-block; background: #dddddd;padding-bottom: 7px;padding-top: 7px;color: black">
+                        <a href=@Url.Action("Index", "Home")>CONTINUE SHOPPING</a>
+                    </div>
+                   
                     <button class="btn cart-button-checkout" id="cart-checkout">CHECK OUT</button>
+
+                    <a href="~/Views/Shared/_CheckOut.cshtml">~/Views/Shared/_CheckOut.cshtml</a>  
+              
                 </div>
 
             </div>
@@ -78,7 +85,7 @@
 <script>
         $(function(){
             $("#cart-checkout").click(function() {
-                toastr["success"]("Added successfully!", "Add to cart");
+                toastr["success"]("Added successfully!", "Succseffully");
             });
          });
 </script>
