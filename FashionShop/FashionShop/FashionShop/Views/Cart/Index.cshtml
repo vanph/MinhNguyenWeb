@@ -55,11 +55,11 @@
                 <tbody>
                 <tr>
                     <td>Total quantity</td>
-                    <td class="text-right"></td>
+                    <td class="text-right"> @Model.CartTotal.TotalQuantity</td>
                 </tr>
                 <tr>
-                    <td>Total payment</td>
-                    <td class="text-right"></td>
+                    <td>Total money</td>
+                    <td class="text-right">@Model.CartTotal.TotalMoney </td>
                 </tr>
                 </tbody>
             </table>
@@ -67,13 +67,14 @@
             <div class="button-group">
                 <div>
                     <div style="border: 0px solid #dddddd  ; display: inline-block; background: #dddddd;padding-bottom: 7px;padding-top: 7px;color: black">
-                        <a href=@Url.Action("Index", "Home")>CONTINUE SHOPPING</a>
+                        <a href= @Url.Action("Index", "Products", new { producttype = "Men" })>CONTINUE SHOPPING</a>
+                       
+@*                        @Html.ActionLink("Continue shopping", "Index", "Products", new { producttype = "Men" }, null)*@
                     </div>
                    
-                    <button class="btn cart-button-checkout" id="cart-checkout">CHECK OUT</button>
-
-                    <a href="~/Views/Shared/_CheckOut.cshtml">~/Views/Shared/_CheckOut.cshtml</a>  
-              
+                    <div style="border: 0px solid #dddddd  ; display: inline-block; background: #dddddd;padding-bottom: 7px;padding-top: 7px;color: black">
+                        <a href= @Url.Action("Index", "Checkout")>CHECKOUT</a>
+                    </div>
                 </div>
 
             </div>

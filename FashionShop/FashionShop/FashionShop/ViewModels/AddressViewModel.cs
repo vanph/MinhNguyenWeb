@@ -7,6 +7,10 @@ namespace FashionShop.ViewModels
 {
     public class AddressViewModel
     {
+        public string FullName { get; set; }
+
+        public string EmailAddress { get; set; }
+
         public int Phone { get; set; }
 
         public string LineAddress { get; set; }

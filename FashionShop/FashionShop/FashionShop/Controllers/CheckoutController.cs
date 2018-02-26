@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using DataAccess;
 using FashionShop.Services;
 using FashionShop.ViewModels;
@@ -29,9 +30,17 @@ namespace FashionShop.Controllers
             //Todo:
             //Get ShippingAddress if logged  ( default ShippingAddress = address of customer)
             //Get Payment method
+            var paymentMethodViewModels = _dbContext.PaymentMethods.Select(x => new PaymentMethodViewModel()
+            {
+                PaymentMethodId = x.PaymentMethodId,
+                PaymentMethodName = x.PaymentMethodName
+            }).ToList();
+
             var model = new CheckoutViewModel()
             {
-                Cart = _cartService.GetCurrentCart()
+                Cart = _cartService.GetCurrentCart(),
+                PaymentMethods = paymentMethodViewModels,
+                ShippingAddress = new AddressViewModel()
             };
 
             return model;
@@ -41,12 +50,11 @@ namespace FashionShop.Controllers
         [HttpPost]
         public ActionResult Purchase(CheckoutViewModel viewModel)
         {
-            if (viewModel?.Cart == null || viewModel.Cart.CartItems.Count ==0)
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            //if (viewModel?.Cart == null || viewModel.Cart.CartItems.Count ==0)
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
             
-            viewModel.IsAuthenticated = User.Identity.IsAuthenticated;
 
             //Todo: implement place order
 
