@@ -9,6 +9,8 @@ namespace FashionShop.ViewModels
     {
         public  string ProductType { get; set; }
 
+        public string Keyword { get; set; }
+
         public  List<ProductItem> ProductItems { get; set; }
 
         public ProductListViewModel()

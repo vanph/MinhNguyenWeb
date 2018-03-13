@@ -11,22 +11,37 @@ namespace FashionShop.Controllers
     public class ProductsController : Controller
     {
         // GET: Products
-        public ActionResult Index(string productType)
+        public ActionResult Index(string productType, string keyword)
         {
             var model = new ProductListViewModel
             {
                 ProductType = productType,
-                ProductItems = GetProducts(productType)
+                Keyword = keyword,
+                ProductItems = GetProducts(productType,keyword)
             };
-            ViewBag.term = productType;
+            ViewBag.Keyword = keyword;
+            ViewBag.ProductType = productType;
             return View(model);
         }
+        
+      
 
-        private List<ProductItem> GetProducts(string productType)
+        private List<ProductItem> GetProducts(string productType, string keyword)
         {
             using (var dbContext = new FashionShopEntities())
             {
-                var productItems = dbContext.Products.Where(x => x.ProductType.Name.Equals(productType)).Select(x => new ProductItem()
+                var query = dbContext.Products.AsQueryable();
+                if(!string.IsNullOrEmpty(productType))
+                {
+                    query = query.Where(x => x.ProductType.Name.Equals(productType));
+                }
+
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    query = query.Where(x => x.Name.Contains(keyword));
+                }
+
+                var productItems = query.Select(x => new ProductItem()
                 {
                     
                     Name = x.Name,
@@ -40,6 +55,29 @@ namespace FashionShop.Controllers
                     item.DetailLink = BuildDetailLink(item.Code);
                 }
 
+                return productItems;
+            }
+
+        }
+
+        private List<ProductItem> SearchProducts(string keyword)
+        {
+            using (var dbContext = new FashionShopEntities())
+            {
+                var productItems = dbContext.Products.Where(x => x.Name.Contains(keyword)).Select(x => new ProductItem()
+                {
+
+                    Name = x.Name,
+                    Price = x.Price,
+                    ImageSrc = x.Image,
+                    Code = x.Code
+                }).ToList();
+
+                foreach (var item in productItems)
+                {
+                    item.DetailLink = BuildDetailLink(item.Code);
+                }
+                
                 return productItems;
             }
 

@@ -74,6 +74,7 @@ namespace FashionShop.Services
             return cartTotal;
         }
 
+
         private CartItem CreateCartItem(string variantCode, int quantity)
         {
             var variant = _dbContext.ProductVariants.FirstOrDefault(x => x.Code == variantCode);
@@ -82,12 +83,12 @@ namespace FashionShop.Services
             {
                 var item = new CartItem
                 {
+                    ProductVariantId = variant.ProductVariantId,
                     VariantCode = variantCode,
                     Quantity = quantity,
                     ProductName = variant.Product.Name,
                     Price = variant.Product.Price,
                     //Todo: get more in db
-
 
                 };
 
@@ -95,6 +96,12 @@ namespace FashionShop.Services
             }
 
             return new CartItem();
+        }
+
+
+        public void ClearCurrentCart()
+        {
+            System.Web.HttpContext.Current.Session[Constants.ShoppingCart] = null;
         }
     }
 }

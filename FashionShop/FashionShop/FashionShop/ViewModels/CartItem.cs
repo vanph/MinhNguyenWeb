@@ -9,6 +9,7 @@ namespace FashionShop.ViewModels
     [Serializable]
     public class CartItem
     {
+        public int ProductVariantId { get; set; }
         public string VariantCode { get; set; }
         public string ImageSrc { get; set; }
         public int Quantity { get; set; }

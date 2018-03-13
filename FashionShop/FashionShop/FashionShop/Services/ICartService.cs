@@ -7,5 +7,7 @@ namespace FashionShop.Services
         CartViewModel GetCurrentCart();
 
         CartTotal AddToCart(string variantCode, int quantity);
+
+        void ClearCurrentCart();
     }
 }

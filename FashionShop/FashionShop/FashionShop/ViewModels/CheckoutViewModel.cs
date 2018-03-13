@@ -6,7 +6,7 @@ namespace FashionShop.ViewModels
     {
         public CartViewModel Cart { get; set; }
         
-        public AddressViewModel ShippingAddress { get; set; }
+        public ShippingInformationViewModel ShippingInformation { get; set; }
         
         public List<PaymentMethodViewModel> PaymentMethods { get; set; }
 
@@ -20,10 +20,11 @@ namespace FashionShop.ViewModels
         /// </summary>
         public string RedirectUrl { get; set; }
 
+        
         public CheckoutViewModel()
         {
             Cart = new CartViewModel();
-            ShippingAddress = new AddressViewModel();
+            ShippingInformation = new ShippingInformationViewModel();
             PaymentMethods = new List<PaymentMethodViewModel>();
         }
         

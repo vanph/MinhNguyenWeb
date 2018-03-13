@@ -6,7 +6,6 @@ namespace DataAccess
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("OrderDetail")]
     public partial class OrderDetail
     {
         public Guid OrderDetailId { get; set; }

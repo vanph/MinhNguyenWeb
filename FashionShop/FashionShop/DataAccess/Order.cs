@@ -6,7 +6,6 @@ namespace DataAccess
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Order")]
     public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,7 +23,18 @@ namespace DataAccess
 
         public int PaymentMethodId { get; set; }
 
-        public int Phone { get; set; }
+
+        [Required]
+        [StringLength(250)]
+        public string FullName { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [StringLength(50)]
+        public string EmailAdress { get; set; }
+        [Required]
+        [StringLength(20)]
+        public string Phone { get; set; }
 
         [Required]
         [StringLength(250)]
@@ -43,9 +53,9 @@ namespace DataAccess
 
         public int OrderStatusId { get; set; }
 
-        public int PaymentStatusId { get; set; }
+        public decimal Amount { get; set; }
 
-        public decimal PaymentAmount { get; set; }
+        public decimal AmountPaint { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
@@ -61,13 +71,11 @@ namespace DataAccess
 
         public virtual Customer Customer { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+
         public virtual OrderStatus OrderStatus { get; set; }
 
         public virtual PaymentMethod PaymentMethod { get; set; }
-
-        public virtual PaymentStatu PaymentStatu { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

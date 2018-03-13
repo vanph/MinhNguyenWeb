@@ -22,7 +22,8 @@ namespace DataAccess
         [StringLength(50)]
         public string CustomerName { get; set; }
 
-        public int? Phone { get; set; }
+        [StringLength(20)]
+        public string Phone { get; set; }
 
         [StringLength(250)]
         public string LineAddress { get; set; }

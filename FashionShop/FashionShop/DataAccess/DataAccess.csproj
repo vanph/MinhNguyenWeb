@@ -56,7 +56,6 @@
     <Compile Include="OrderDetail.cs" />
     <Compile Include="OrderStatus.cs" />
     <Compile Include="PaymentMethod.cs" />
-    <Compile Include="PaymentStatu.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductType.cs" />
     <Compile Include="ProductVariant.cs" />
@@ -68,6 +67,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

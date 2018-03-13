@@ -7,92 +7,152 @@
 <div class="container">
     <img src="/Content/img/img1.jpg" width="1170" height="600" />
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="content-checkout">
-                <p>Thông tin giao hành </p>
-                <p>Bạn đã có tài khoản ? </p>
 
-                <input placeholder="Họ và tên" type="text" />
-                <input placeholder="Email" type="email" />
-                <input placeholder="Số điện thoại" type="number" />
-                <input placeholder="Địa chỉ" type="text" />
-            </div>
-
-
-        </div>
-        <div class="col-md-6">
-
-        </div>
-    </div>
-
-</div>
-
-
-<div class="container" id="shopping-cart">
-    <div class="row no-gutters">
-        <div class="col-md-8 col-sm-8 col-xs-12 border-right">
-            <div class="text-center">
-                <p class="cart-title" style="font-weight: bold; margin-bottom: 20px;">YOUR SHOPPING CART</p>
-            </div>
-            <table class="table table-responsive order-detail">
-                <thead>
-                <tr>
-                    <th class="text-center">Image</th>
-                    <th class="text-center">Product Name</th>
-                    <th class="text-center">Color</th>
-                    <th class="text-center">Unit Price</th>
-                    <th class="text-center">Quantity</th>
-                    <th class="text-center">Total</th>
-                    <th class="text-center">Remove</th>
-                </tr>
-                </thead>
-                <tbody class="text-center">
-                @foreach (var item in Model.Cart.CartItems) { 
-                    <tr>
-                        <td><img src="@item.ImageSrc" alt="" class="product-thumbnail"></td>
-                        <td> <p>@item.ProductName</p></td>
-                        <td> <p > @item.Color</p></td>
-                        <td class="unit-price"> <p>@item.Price   </p></td>
-                        <td> @item.Quantity</td>
-                        <td > <p>@item.Money </p></td>
-                        <td> <p><i class="fa fa-remove btn-sm"></i> </p></td>
-                    </tr>
-                }
-                </tbody>
-            </table>
-
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12" id="cart-summary-container">
-            <table class="table table-responsive" id="cart-summary">
-                <thead>
-                <tr>
-                    <th class="text-center" colspan="2">SUMMARY</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Total quantity</td>
-                    <td class="text-right"> @Model.Cart.CartTotal.TotalQuantity</td>
-                </tr>
-                <tr>
-                    <td>Total money</td>
-                    <td class="text-right">@Model.Cart.CartTotal.TotalMoney </td>
-                </tr>
-                </tbody>
-            </table>
-          
-            <div class="button-group">
-                <div>
-                  
-                    <div style="border: 0px solid #dddddd  ; display: inline-block; background: #dddddd;padding-bottom: 7px;padding-top: 7px;color: black">
-                        <a href= @Url.Action("Purchase", "Checkout")>Purchase</a>
+@if (Model.Cart.CartItems.Count > 0)
+{
+    using (Html.BeginForm("Purchase", "Checkout", "Post"))
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="content-checkout">
+                        <p>Thông tin giao hàng </p>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShippingInformation.EmailAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ShippingInformation.EmailAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ShippingInformation.EmailAddress, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShippingInformation.FullName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ShippingInformation.FullName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ShippingInformation.FullName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShippingInformation.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ShippingInformation.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ShippingInformation.Phone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShippingInformation.LineAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ShippingInformation.LineAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ShippingInformation.LineAddress, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShippingInformation.District, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ShippingInformation.District, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ShippingInformation.District, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShippingInformation.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ShippingInformation.City, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ShippingInformation.City, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShippingInformation.Note, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ShippingInformation.Note, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ShippingInformation.Note, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                       
+                        <p> Phương thức thanh toán</p>
+                        @foreach (var item in Model.PaymentMethods)
+                        {
+                            <input type="radio" name="PaymentMethodId" value="@item.PaymentMethodId"> @item.PaymentMethodName <br/>
+                        }
                     </div>
-                </div>
 
+                    <div class="button-group">
+                        <div>
+
+                            <div style="border: 0px solid #dddddd; display: inline-block; background: #dddddd; padding-bottom: 7px; padding-top: 7px; color: black">
+                                <input type ="submit" value ="Purchase"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+
+                <div class="col-md-6">
+           
+            
+                </div>
             </div>
 
         </div>
+    }
+    
+
+    <div class="container" id="shopping-cart">
+        <div class="row no-gutters">
+            <div class="col-md-8 col-sm-8 col-xs-12 border-right">
+                <div class="text-center">
+                    <p class="cart-title" style="font-weight: bold; margin-bottom: 20px;">YOUR SHOPPING CART</p>
+                </div>
+                <table class="table table-responsive order-detail">
+                    <thead>
+                    <tr>
+                        <th class="text-center">Image</th>
+                        <th class="text-center">Product Name</th>
+                        <th class="text-center">Color</th>
+                        <th class="text-center">Unit Price</th>
+                        <th class="text-center">Quantity</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Remove</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-center">
+                    @foreach (var item in Model.Cart.CartItems) { 
+                        <tr>
+                            <td><img src="@item.ImageSrc" alt="" class="product-thumbnail"></td>
+                            <td> <p>@item.ProductName</p></td>
+                            <td> <p > @item.Color</p></td>
+                            <td class="unit-price"> <p>@item.Price   </p></td>
+                            <td> @item.Quantity</td>
+                            <td > <p>@item.Money </p></td>
+                            <td> <p><i class="fa fa-remove btn-sm"></i> </p></td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12" id="cart-summary-container">
+                <table class="table table-responsive" id="cart-summary">
+                    <thead>
+                    <tr>
+                        <th class="text-center" colspan="2">SUMMARY</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Total quantity</td>
+                        <td class="text-right"> @Model.Cart.CartTotal.TotalQuantity</td>
+                    </tr>
+                    <tr>
+                        <td>Total money</td>
+                        <td class="text-right">@Model.Cart.CartTotal.TotalMoney </td>
+                    </tr>
+                    </tbody>
+                </table>
+          
+            
+
+            </div>
+        </div>
     </div>
-</div>
+}

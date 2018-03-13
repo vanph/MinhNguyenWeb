@@ -14,11 +14,10 @@ namespace DataAccess
 
         public virtual DbSet<Color> Colors { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderStatus> OrderStatuses { get; set; }
         public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
-        public virtual DbSet<PaymentStatu> PaymentStatus { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<ProductVariant> ProductVariants { get; set; }
@@ -33,17 +32,17 @@ namespace DataAccess
                 .WithRequired(e => e.Customer)
                 .WillCascadeOnDelete();
 
-            modelBuilder.Entity<Order>()
-                .Property(e => e.PaymentAmount)
-                .HasPrecision(18, 0);
-
             modelBuilder.Entity<OrderDetail>()
                 .Property(e => e.UnitPrice)
                 .HasPrecision(18, 0);
 
-            modelBuilder.Entity<OrderStatus>()
-                .Property(e => e.OrderStatusName)
-                .IsFixedLength();
+            modelBuilder.Entity<Order>()
+                .Property(e => e.Amount)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Order>()
+                .Property(e => e.AmountPaint)
+                .HasPrecision(18, 0);
 
             modelBuilder.Entity<OrderStatus>()
                 .HasMany(e => e.Orders)
@@ -53,11 +52,6 @@ namespace DataAccess
             modelBuilder.Entity<PaymentMethod>()
                 .HasMany(e => e.Orders)
                 .WithRequired(e => e.PaymentMethod)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<PaymentStatu>()
-                .HasMany(e => e.Orders)
-                .WithRequired(e => e.PaymentStatu)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Product>()
