@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using DataAccess;
 using FashionShop.Enumerations;
+using FashionShop.Exceptions;
 using FashionShop.Services;
 using FashionShop.ViewModels;
 
@@ -64,13 +65,22 @@ namespace FashionShop.Controllers
 
                 if (cart.CartItems.Count == 0)
                 {
-                    ModelState.AddModelError("Purchase", "There is empty cart");
+                    ModelState.AddModelError("PurchaseError", "There is empty cart");
 
-                    View("Index", checkoutViewModel);
+                    return View("Index", checkoutViewModel);
                 }
                 
-               var orderId = PlaceOrder(shippingInformation, cart);
+                try
+                {
+                    var orderId = PlaceOrder(shippingInformation, cart);
+                }
+                catch (OutOfStockException ex)
+                {
+                    ModelState.AddModelError("PurchaseError", ex.Message);
 
+                   return View("Index", checkoutViewModel);
+                }
+                
                 //clear cart
                 _cartService.ClearCurrentCart();
                
@@ -83,6 +93,18 @@ namespace FashionShop.Controllers
         private Guid PlaceOrder(ShippingInformationViewModel shippingInformation, CartViewModel cart)
         {
             //check quantity of cart items in store
+            foreach (var cartItem in cart.CartItems)
+            {
+                var variant = _dbContext.ProductVariants.FirstOrDefault(x => x.ProductVariantId == cartItem.ProductVariantId);
+                if (variant == null || variant.Quantity < cartItem.Quantity)
+                {
+                    throw new OutOfStockException($"Het san pham {cartItem.ProductName} {cartItem.Size}");
+                }
+
+                variant.Quantity = variant.Quantity - cartItem.Quantity;
+                variant.ModifiedDate = DateTime.Now;
+                variant.ModifiedBy = shippingInformation.EmailAddress;
+            }
 
             var order = new Order
             {
@@ -126,7 +148,7 @@ namespace FashionShop.Controllers
 
             _dbContext.Orders.Add(order);
             _dbContext.OrderDetails.AddRange(orderDetails);
-            //get variants => Variant.Quantity = Variant.Quantity - cartItem.Quantity
+
             _dbContext.SaveChanges();
 
             return order.OrderId;

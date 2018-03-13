@@ -160,6 +160,7 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Enumerations\OrderStatusEnum.cs" />
     <Compile Include="Enumerations\PaymentMethodEnum.cs" />
+    <Compile Include="Exceptions\OutOfStockException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
